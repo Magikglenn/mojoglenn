@@ -6,6 +6,7 @@ import leVillageLogo from "@/assets/logos/le-village.png";
 import orangeLogo from "@/assets/logos/orange.png";
 import totalEnergiesLogo from "@/assets/logos/total-energies.png";
 import iscomLogo from "@/assets/logos/iscom.webp";
+import esirLogo from "@/assets/logos/esir.webp";
 
 const clientLogos = [
   { name: "Orange", logo: orangeLogo },
@@ -16,6 +17,7 @@ const clientLogos = [
   { name: "AJIR Bretagne", logo: ajirLogo },
   { name: "ABEA", logo: abeaLogo },
   { name: "ISCOM", logo: iscomLogo },
+  { name: "ESIR", logo: esirLogo },
 ];
 
 export const TrustSection = () => {

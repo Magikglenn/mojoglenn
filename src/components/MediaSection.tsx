@@ -1,20 +1,23 @@
 import { ExternalLink } from "lucide-react";
+import forumIscom from "@/assets/forum-iscom.jpg";
+import podcastGaliana from "@/assets/podcast-galiana.png";
+import podcastYoutube from "@/assets/podcast-youtube.jpg";
 
 const mediaPosts = [
   {
     title: "Grand Forum de la communication - Iscom 2025",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7401666531157291008/",
-    placeholder: "ISCOM 2025",
+    image: forumIscom,
   },
   {
     title: "Invité du podcast de François Galiana",
     link: "https://podcasts.apple.com/sv/podcast/le-pouvoir-des-d%C3%A9cisions-une-conversation-avec-glenn/id1668675486?i=1000649748526",
-    placeholder: "Podcast",
+    image: podcastGaliana,
   },
   {
     title: "Invité du podcast sur la prise de parole",
     link: "https://youtu.be/L345PkP2kf4?si=zhWW4-FwRew__mMK&t=1014",
-    placeholder: "YouTube",
+    image: podcastYoutube,
   },
 ];
 
@@ -42,11 +45,13 @@ export const MediaSection = () => {
               className="group flex-shrink-0 w-80 snap-center"
             >
               <div className="relative rounded-2xl overflow-hidden bg-background/10 backdrop-blur-sm border border-background/20 transition-all duration-300 group-hover:border-rose-light/50 group-hover:shadow-glow-rose">
-                {/* Placeholder image area */}
-                <div className="aspect-video bg-gradient-to-br from-rose-light/20 to-kaki-light/20 flex items-center justify-center">
-                  <span className="text-background/50 text-sm font-medium">
-                    {post.placeholder}
-                  </span>
+                {/* Image */}
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
 
                 {/* Content */}

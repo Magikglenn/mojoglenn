@@ -1,3 +1,5 @@
+import glennQuote from "@/assets/glenn-quote.jpg";
+
 interface QuoteSectionProps {
   quote: string;
   showImage?: boolean;
@@ -15,13 +17,15 @@ export const QuoteSection = ({
     <section className="py-20 lg:py-28 section-quote">
       <div className="container mx-auto px-6">
         <div className={`flex flex-col ${showImage ? "lg:flex-row" : ""} items-center gap-12`}>
-          {/* Image placeholder */}
+          {/* Image */}
           {showImage && (
             <div className="w-full lg:w-1/3 flex-shrink-0">
-              <div className="aspect-square max-w-sm mx-auto rounded-2xl bg-muted overflow-hidden shadow-elevated">
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
-                  Photo à venir
-                </div>
+              <div className="aspect-square max-w-sm mx-auto rounded-2xl overflow-hidden shadow-elevated">
+                <img 
+                  src={glennQuote} 
+                  alt="Glenn Le Bourhis" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           )}

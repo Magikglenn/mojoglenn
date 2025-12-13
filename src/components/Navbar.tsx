@@ -34,15 +34,15 @@ export const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-soft py-3"
-          : "bg-transparent py-5"
+          ? "bg-background/98 backdrop-blur-sm border-b border-border/50 py-4"
+          : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#"
-          className="font-serif text-2xl font-semibold text-foreground hover:text-primary transition-colors"
+          className="text-2xl font-extrabold text-foreground hover:text-primary transition-colors tracking-tight"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -52,12 +52,12 @@ export const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
             <button
               key={item.label}
               onClick={() => scrollToSection(item.href)}
-              className="text-muted-foreground hover:text-foreground transition-colors animated-underline text-sm font-medium"
+              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-semibold uppercase tracking-wider"
             >
               {item.label}
             </button>
@@ -70,6 +70,7 @@ export const Navbar = () => {
             variant="hero"
             size="default"
             onClick={() => scrollToSection("#contact")}
+            className="font-semibold"
           >
             Parlons de votre projet
           </Button>
@@ -87,13 +88,13 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md shadow-card border-t border-border animate-fade-in">
-          <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border animate-fade-in">
+          <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
             {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors text-left py-2 text-lg font-medium"
+                className="text-foreground hover:text-primary transition-colors text-left text-lg font-semibold"
               >
                 {item.label}
               </button>

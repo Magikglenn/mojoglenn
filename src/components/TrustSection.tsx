@@ -1,32 +1,42 @@
-// Placeholder for client logos - will be replaced with actual logos
+import ajirLogo from "@/assets/logos/ajir-bretagne.png";
+import abeaLogo from "@/assets/logos/abea-bretagne.png";
+import globalServicesLogo from "@/assets/logos/global-services.png";
+import klaxonLogo from "@/assets/logos/klaxon.png";
+import leVillageLogo from "@/assets/logos/le-village.png";
+import orangeLogo from "@/assets/logos/orange.png";
+import totalEnergiesLogo from "@/assets/logos/total-energies.png";
+import iscomLogo from "@/assets/logos/iscom.webp";
+
 const clientLogos = [
-  { name: "Orange", placeholder: true },
-  { name: "Total Energies", placeholder: true },
-  { name: "Le Village", placeholder: true },
-  { name: "Global Services", placeholder: true },
-  { name: "Klaxon", placeholder: true },
+  { name: "Orange", logo: orangeLogo },
+  { name: "Total Energies", logo: totalEnergiesLogo },
+  { name: "Le Village", logo: leVillageLogo },
+  { name: "Global Services", logo: globalServicesLogo },
+  { name: "Klaxon", logo: klaxonLogo },
+  { name: "AJIR Bretagne", logo: ajirLogo },
+  { name: "ABEA", logo: abeaLogo },
+  { name: "ISCOM", logo: iscomLogo },
 ];
 
 export const TrustSection = () => {
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-20 border-y border-border/50">
       <div className="container mx-auto px-6">
-        <p className="text-center text-muted-foreground mb-10 text-sm font-medium uppercase tracking-wider">
+        <p className="text-center text-muted-foreground mb-12 text-sm font-semibold uppercase tracking-[0.2em]">
           Ils m'ont fait confiance
         </p>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 lg:gap-20">
           {clientLogos.map((client) => (
             <div
               key={client.name}
-              className="flex items-center justify-center grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+              className="flex items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-500"
             >
-              {/* Placeholder for logo - replace with actual image */}
-              <div className="w-24 h-12 md:w-32 md:h-16 bg-muted rounded flex items-center justify-center">
-                <span className="text-xs text-muted-foreground font-medium">
-                  {client.name}
-                </span>
-              </div>
+              <img
+                src={client.logo}
+                alt={`Logo ${client.name}`}
+                className="h-10 md:h-14 w-auto object-contain"
+              />
             </div>
           ))}
         </div>

@@ -28,18 +28,23 @@ export const FAQSection = () => {
     <section id="faq" className="py-24 lg:py-32">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-12 text-center">
-            Questions <span className="text-primary">fréquentes</span>
-          </h2>
+          <div className="text-center mb-16">
+            <span className="text-primary font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
+              FAQ
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
+              Questions <span className="text-primary">fréquentes</span>
+            </h2>
+          </div>
 
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card rounded-xl border border-border/50 px-6 shadow-soft"
+                className="bg-card rounded-lg border border-border/50 px-8 data-[state=open]:border-primary/30 transition-colors"
               >
-                <AccordionTrigger className="text-left font-serif text-lg font-medium text-foreground hover:text-primary py-6 hover:no-underline">
+                <AccordionTrigger className="text-left text-lg font-bold text-foreground hover:text-primary py-6 hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed pb-6">

@@ -55,7 +55,7 @@ export const HackathonSection = () => {
             </div>
 
             <Button
-              variant="heroOutline"
+              variant="outline"
               size="lg"
               className="border-rose-light text-rose-light hover:bg-rose-light hover:text-foreground"
               onClick={scrollToContact}

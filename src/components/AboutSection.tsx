@@ -1,10 +1,28 @@
+import glennPortrait from "@/assets/glenn-portrait.jpg";
+
 export const AboutSection = () => {
   return (
     <section id="about" className="py-24 lg:py-32 bg-foreground text-background">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Portrait Image */}
+          <div className="order-2 lg:order-1">
+            <div className="relative">
+              <div className="aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden shadow-elevated">
+                <img 
+                  src={glennPortrait} 
+                  alt="Glenn Le Bourhis - Portrait" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/30 rounded-full -z-10" />
+              <div className="absolute -top-6 -right-6 w-20 h-20 bg-kaki/30 rounded-full -z-10" />
+            </div>
+          </div>
+
           {/* Why work with me */}
-          <div>
+          <div className="order-1 lg:order-2">
             <span className="text-primary font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
               Pourquoi moi
             </span>
@@ -30,16 +48,18 @@ export const AboutSection = () => {
               </p>
             </div>
           </div>
+        </div>
 
-          {/* Who am I */}
-          <div className="bg-background/5 rounded-lg p-10 lg:p-12 border border-background/10">
-            <span className="text-primary font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
-              Bio
-            </span>
-            <h3 className="text-3xl md:text-4xl font-extrabold mb-8 tracking-tight">
-              Qui suis-je<span className="text-primary">?</span>
-            </h3>
+        {/* Who am I - Full width below */}
+        <div className="mt-20 bg-background/5 rounded-lg p-10 lg:p-12 border border-background/10">
+          <span className="text-primary font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
+            Bio
+          </span>
+          <h3 className="text-3xl md:text-4xl font-extrabold mb-8 tracking-tight">
+            Qui suis-je<span className="text-primary">?</span>
+          </h3>
 
+          <div className="grid lg:grid-cols-2 gap-8">
             <div className="space-y-5 text-background/70 leading-relaxed">
               <p className="text-lg font-semibold text-background">
                 Passionné de communication sous toutes ses formes, j'ai passé les 10 dernières années à essayer de mieux comprendre le cerveau humain.
@@ -48,7 +68,9 @@ export const AboutSection = () => {
               <p>
                 Je m'appelle <strong className="text-background">Glenn Le Bourhis</strong>. J'ai toujours aimé les histoires. J'ai écrit des nouvelles, raconté des blagues, fait de la magie, du théâtre, lu des tonnes de livres et de BD, rédigé des publicités, des scénarios de jeux de rôles, des films, animé des séminaires, donné des cours…
               </p>
+            </div>
 
+            <div className="space-y-5 text-background/70 leading-relaxed">
               <p>
                 Tout cela, je crois que je l'ai fait par amour du storytelling et la joie qu'on trouve à se rapprocher des autres à travers un récit. Avec une histoire, on peut fédérer, donner de l'espoir, rendre amoureux.
               </p>

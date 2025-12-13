@@ -1,0 +1,37 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+export const ContactSection = () => {
+  return (
+    <section id="contact" className="py-24 lg:py-32">
+      <div className="container mx-auto px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            Parlons de{" "}
+            <span className="scribble-underline text-primary">votre projet</span>
+          </h2>
+
+          <p className="text-muted-foreground mb-10 text-lg leading-relaxed">
+            Prenez quelques minutes pour me parler de votre projet. Je vous recontacte rapidement pour échanger sur vos besoins.
+          </p>
+
+          <Button
+            variant="hero"
+            size="xl"
+            className="group"
+            asChild
+          >
+            <a
+              href="https://tally.so"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Remplir le questionnaire
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};

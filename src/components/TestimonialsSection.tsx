@@ -1,4 +1,4 @@
-import { Star, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -25,44 +25,40 @@ export const TestimonialsSection = () => {
   return (
     <section id="testimonials" className="py-24 lg:py-32 section-gradient">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
+        <div className="mb-20">
+          <span className="text-primary font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
+            Témoignages
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight">
             Ce que disent mes <span className="text-primary">clients</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.author}
-              className="bg-card rounded-2xl p-8 shadow-card card-hover border border-border/50 relative"
+              className="bg-card rounded-lg p-8 lg:p-10 border border-border/50 relative group hover:-translate-y-1 transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Quote icon */}
-              <Quote className="absolute top-6 right-6 w-8 h-8 text-primary/20" />
-
-              {/* Stars */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-4 h-4 fill-primary text-primary"
-                  />
-                ))}
-              </div>
+              <Quote className="w-10 h-10 text-primary/20 mb-6" />
 
               {/* Quote */}
-              <blockquote className="text-muted-foreground leading-relaxed mb-8">
+              <blockquote className="text-muted-foreground leading-relaxed mb-10">
                 "{testimonial.quote}"
               </blockquote>
 
               {/* Author */}
               <div className="border-t border-border pt-6">
-                <p className="font-semibold text-foreground">
+                <p className="font-bold text-foreground text-lg">
                   {testimonial.author}
                 </p>
-                <p className="text-sm text-primary">{testimonial.company}</p>
+                <p className="text-primary font-semibold">{testimonial.company}</p>
               </div>
+
+              {/* Hover accent */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </div>
           ))}
         </div>

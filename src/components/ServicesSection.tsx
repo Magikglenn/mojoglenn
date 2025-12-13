@@ -3,6 +3,7 @@ import { Sparkles, BookOpen, Brain } from "lucide-react";
 const services = [
   {
     icon: Sparkles,
+    number: "01",
     title: "BRANDING",
     subtitle: "Capter l'attention de votre marché",
     description:
@@ -11,6 +12,7 @@ const services = [
   },
   {
     icon: BookOpen,
+    number: "02",
     title: "STORYTELLING",
     subtitle: "Faites partie de l'histoire de votre client",
     description:
@@ -19,6 +21,7 @@ const services = [
   },
   {
     icon: Brain,
+    number: "03",
     title: "NEUROMARKETING",
     subtitle: "Les neurosciences pour mieux comprendre le cerveau",
     description:
@@ -27,64 +30,54 @@ const services = [
   },
 ];
 
-const colorStyles = {
-  rose: {
-    iconBg: "bg-rose-light",
-    iconColor: "text-rose-dark",
-    accent: "bg-primary",
-  },
-  kaki: {
-    iconBg: "bg-kaki-light",
-    iconColor: "text-kaki-dark",
-    accent: "bg-secondary",
-  },
-};
-
 export const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 lg:py-32 section-gradient">
+    <section id="services" className="py-24 lg:py-32">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
-            Comment on va booster{" "}
+        <div className="mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 tracking-tight">
+            Comment on va booster
+            <br />
             <span className="text-primary">votre communication</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          {services.map((service, index) => {
-            const styles = colorStyles[service.color];
-            return (
-              <div
-                key={service.title}
-                className="bg-card rounded-2xl p-8 shadow-card card-hover border border-border/50"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              className="group relative"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {/* Number */}
+              <span className="text-8xl font-extrabold text-muted/50 absolute -top-10 -left-2 select-none">
+                {service.number}
+              </span>
+
+              <div className="relative pt-12 pb-8">
                 {/* Icon */}
-                <div
-                  className={`w-14 h-14 rounded-xl ${styles.iconBg} flex items-center justify-center mb-6`}
-                >
-                  <service.icon className={`w-7 h-7 ${styles.iconColor}`} />
+                <div className="w-12 h-12 rounded-lg bg-foreground flex items-center justify-center mb-8">
+                  <service.icon className="w-6 h-6 text-background" />
                 </div>
 
                 {/* Title */}
-                <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+                <h3 className="text-2xl font-bold text-foreground mb-3 tracking-tight">
                   {service.title}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="text-primary font-medium mb-4">{service.subtitle}</p>
-
-                {/* Accent line */}
-                <div className={`w-12 h-1 ${styles.accent} rounded-full mb-5`} />
+                <p className="text-primary font-semibold mb-6">{service.subtitle}</p>
 
                 {/* Description */}
                 <p className="text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
               </div>
-            );
-          })}
+
+              {/* Bottom border on hover */}
+              <div className="h-1 w-0 group-hover:w-full bg-primary transition-all duration-500 ease-out" />
+            </div>
+          ))}
         </div>
       </div>
     </section>

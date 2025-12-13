@@ -1,5 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Users, Lightbulb, Rocket } from "lucide-react";
+import hackathon1 from "@/assets/hackathon-1.jpg";
+import hackathon2 from "@/assets/hackathon-2.jpg";
+import hackathon3 from "@/assets/hackathon-3.jpg";
+import hackathon4 from "@/assets/hackathon-4.jpg";
 
 export const HackathonSection = () => {
   const scrollToContact = () => {
@@ -64,22 +68,22 @@ export const HackathonSection = () => {
             </Button>
           </div>
 
-          {/* Images placeholder */}
+          {/* Images */}
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
-              <div className="aspect-square rounded-2xl bg-background/10 flex items-center justify-center">
-                <span className="text-background/30 text-sm">Photo 1</span>
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <img src={hackathon1} alt="Hackathon - Session de travail" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </div>
-              <div className="aspect-[4/3] rounded-2xl bg-background/10 flex items-center justify-center">
-                <span className="text-background/30 text-sm">Photo 2</span>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                <img src={hackathon2} alt="Hackathon - Accompagnement équipes" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </div>
             </div>
             <div className="space-y-4 pt-8">
-              <div className="aspect-[4/3] rounded-2xl bg-background/10 flex items-center justify-center">
-                <span className="text-background/30 text-sm">Photo 3</span>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                <img src={hackathon3} alt="Hackathon - Photo de groupe" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </div>
-              <div className="aspect-square rounded-2xl bg-background/10 flex items-center justify-center">
-                <span className="text-background/30 text-sm">Photo 4</span>
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <img src={hackathon4} alt="Hackathon - Glenn Le Bourhis" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </div>
             </div>
           </div>

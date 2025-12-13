@@ -29,11 +29,11 @@ export const FAQSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
+            <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
               FAQ
             </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
-              Questions <span className="text-primary">fréquentes</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground tracking-tight">
+              Questions <span className="text-accent">fréquentes</span>
             </h2>
           </div>
 
@@ -42,9 +42,9 @@ export const FAQSection = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card rounded-lg border border-border/50 px-8 data-[state=open]:border-primary/30 transition-colors"
+                className="bg-card rounded-lg border border-border/50 px-8 data-[state=open]:border-accent/30 transition-colors"
               >
-                <AccordionTrigger className="text-left text-lg font-bold text-foreground hover:text-primary py-6 hover:no-underline">
+                <AccordionTrigger className="font-display text-left text-lg font-bold text-foreground hover:text-accent py-6 hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed pb-6">

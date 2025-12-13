@@ -9,7 +9,7 @@ const offers = [
     description:
       "On fait le point sur votre image, votre positionnement, vos actions, vos supports, et on met le doigt sur les dysfonctionnements qui vous bloquent pour avancer dans la bonne direction.",
     price: "À partir de 600 € HT",
-    color: "rose" as const,
+    color: "bleu" as const,
   },
   {
     icon: Users,
@@ -17,18 +17,22 @@ const offers = [
     subtitle: "Un accompagnement mensuel qui englobe tous les aspects de la communication.",
     description:
       "On parle de branding, de storytelling et de neuromarketing. On clarifie votre vision, on définit votre positionnement, on se concentre sur ce qui fonctionne pour vous.",
-    price: "Tarif mensuel : à partir de 600 € HT",
-    color: "kaki" as const,
+    price: "Tarif mensuel : à partir de 800 € HT",
+    color: "violet" as const,
     featured: true,
   },
   {
     icon: Mic,
     title: "CONFÉRENCES",
     subtitle: "Plusieurs conférences pour vos séminaires ou vos équipes marketing.",
-    description:
-      "« Storytelling : le pouvoir des histoires », « Créer de la confiance pour vendre mieux », « Comment éliminer la concurrence ». Des conférences de 1 heure pour changer de perspective et mieux comprendre le cerveau humain.",
-    price: "Sur devis",
-    color: "rose" as const,
+    descriptionList: [
+      "Storytelling : le pouvoir des histoires",
+      "Comment éliminer la concurrence",
+      "Créer de la confiance pour vendre mieux",
+    ],
+    description: "Des conférences de 1 heure pour changer de perspective et mieux comprendre le cerveau humain.",
+    price: "900 € HT",
+    color: "vert" as const,
   },
 ];
 
@@ -44,11 +48,11 @@ export const OffersSection = () => {
     <section id="offers" className="py-24 lg:py-32">
       <div className="container mx-auto px-6">
         <div className="mb-20">
-          <span className="text-primary font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
+          <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
             Services
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight">
-            Mes <span className="text-primary">offres</span>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
+            Mes <span className="text-accent">offres</span>
           </h2>
         </div>
 
@@ -58,37 +62,53 @@ export const OffersSection = () => {
               key={offer.title}
               className={`relative bg-card rounded-lg p-8 lg:p-10 border group hover:-translate-y-1 transition-all duration-300 ${
                 offer.featured 
-                  ? "border-primary ring-2 ring-primary/20" 
+                  ? "border-accent ring-2 ring-accent/20" 
                   : "border-border/50"
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Featured badge */}
               {offer.featured && (
-                <div className="absolute -top-4 left-8 bg-primary text-primary-foreground text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
+                <div className="absolute -top-4 left-8 bg-accent text-accent-foreground text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
                   Populaire
                 </div>
               )}
 
               {/* Icon */}
-              <div className="w-14 h-14 rounded-lg bg-foreground flex items-center justify-center mb-8">
-                <offer.icon className="w-7 h-7 text-background" />
+              <div className="w-14 h-14 rounded-lg bg-primary flex items-center justify-center mb-8">
+                <offer.icon className="w-7 h-7 text-primary-foreground" />
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-4 tracking-tight">
                 {offer.title}
               </h3>
 
               {/* Subtitle */}
-              <p className="text-primary font-semibold mb-6">
+              <p className="text-accent font-semibold mb-6">
                 {offer.subtitle}
               </p>
 
-              {/* Description */}
-              <p className="text-muted-foreground leading-relaxed mb-10">
-                {offer.description}
-              </p>
+              {/* Description or list */}
+              {'descriptionList' in offer && offer.descriptionList ? (
+                <div className="mb-6">
+                  <ul className="space-y-2 mb-4">
+                    {offer.descriptionList.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                        <span className="text-vert mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {offer.description}
+                  </p>
+                </div>
+              ) : (
+                <p className="text-muted-foreground leading-relaxed mb-10">
+                  {offer.description}
+                </p>
+              )}
 
               {/* Price & CTA */}
               <div className="border-t border-border pt-8 mt-auto">
@@ -106,7 +126,7 @@ export const OffersSection = () => {
               </div>
 
               {/* Bottom accent */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </div>
           ))}
         </div>

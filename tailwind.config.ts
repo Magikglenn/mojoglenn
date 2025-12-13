@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'sans-serif'],
+        sans: ['DM Sans', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -50,24 +51,25 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom colors
+        // Brand colors
+        bleu: {
+          DEFAULT: "hsl(var(--bleu))",
+          light: "hsl(var(--bleu-light))",
+        },
         rose: {
           DEFAULT: "hsl(var(--rose))",
           light: "hsl(var(--rose-light))",
-          dark: "hsl(var(--rose-dark))",
         },
-        kaki: {
-          DEFAULT: "hsl(var(--kaki))",
-          light: "hsl(var(--kaki-light))",
-          dark: "hsl(var(--kaki-dark))",
+        gris: {
+          DEFAULT: "hsl(var(--gris))",
         },
-        cream: {
-          DEFAULT: "hsl(var(--cream))",
-          dark: "hsl(var(--cream-dark))",
+        violet: {
+          DEFAULT: "hsl(var(--violet))",
+          light: "hsl(var(--violet-light))",
         },
-        anthracite: {
-          DEFAULT: "hsl(var(--anthracite))",
-          light: "hsl(var(--anthracite-light))",
+        vert: {
+          DEFAULT: "hsl(var(--vert))",
+          light: "hsl(var(--vert-light))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -89,8 +91,9 @@ export default {
         soft: "var(--shadow-soft)",
         card: "var(--shadow-card)",
         elevated: "var(--shadow-elevated)",
+        "glow-bleu": "var(--shadow-glow-bleu)",
         "glow-rose": "var(--shadow-glow-rose)",
-        "glow-kaki": "var(--shadow-glow-kaki)",
+        "glow-violet": "var(--shadow-glow-violet)",
       },
       keyframes: {
         "accordion-down": {

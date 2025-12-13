@@ -6,9 +6,9 @@ export const ContactSection = () => {
     <section id="contact" className="py-24 lg:py-32">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Parlons de{" "}
-            <span className="scribble-underline text-primary">votre projet</span>
+            <span className="scribble-underline text-accent">votre projet</span>
           </h2>
 
           <p className="text-muted-foreground mb-10 text-lg leading-relaxed">

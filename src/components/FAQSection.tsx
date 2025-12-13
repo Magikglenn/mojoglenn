@@ -21,6 +21,16 @@ const faqs = [
     answer:
       "Pour moi, le storytelling c'est une façon de s'inscrire dans la vie des gens. C'est la construction de votre alignement qui va venir résonner chez le consommateur pour créer de la confiance en générant un sentiment d'appartenance. C'est essentiel à tous les niveaux.",
   },
+  {
+    question: "A quoi sert le neuromarketing ?",
+    answer:
+      "Avec le neuromarketing, on s'appuie sur les plus récentes avancées dans le domaine des sciences comportementales pour mieux comprendre le cerveau et proposer des pistes d'amélioration dans vos démarches de communication. On cherche à convaincre, séduire, se connecter.",
+  },
+  {
+    question: "Avec quels types de clients travaillez-vous ?",
+    answer:
+      "Des artisans aux grands groupes, tout le monde a une histoire à raconter. J'aide les solopreneurs comme les équipes marketing au sein de plus grosses structures. Si vous avez des clients, ils ont un cerveau, donc je peux vous aider.",
+  },
 ];
 
 export const FAQSection = () => {

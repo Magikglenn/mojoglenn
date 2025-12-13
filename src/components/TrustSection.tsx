@@ -20,9 +20,9 @@ const clientLogos = [
 
 export const TrustSection = () => {
   return (
-    <section className="py-20 border-y border-border/50">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        <p className="text-center text-muted-foreground mb-12 text-sm font-semibold uppercase tracking-[0.2em]">
+        <p className="text-center text-gray-600 mb-12 text-sm font-semibold uppercase tracking-[0.2em]">
           Ils m'ont fait confiance
         </p>
 

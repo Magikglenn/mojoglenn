@@ -8,7 +8,7 @@ import glennBureau from "@/assets/glenn-bureau.jpg";
 const mediaPosts = [
   {
     title: "Suivez-moi sur Instagram",
-    link: "https://www.instagram.com/glenn.bzh/",
+    link: "https://www.instagram.com/glennlebourhis/",
     image: instaImage,
   },
   {

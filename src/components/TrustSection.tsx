@@ -7,6 +7,10 @@ import orangeLogo from "@/assets/logos/orange.png";
 import totalEnergiesLogo from "@/assets/logos/total-energies.png";
 import iscomLogo from "@/assets/logos/iscom.webp";
 import esirLogo from "@/assets/logos/esir.webp";
+import bodemerLogo from "@/assets/logos/bodemer.jpg";
+import askoriaLogo from "@/assets/logos/askoria.png";
+import emmausLogo from "@/assets/logos/emmaus.png";
+import saintMaloLogo from "@/assets/logos/saint-malo-agglo.png";
 
 const clientLogos = [
   { name: "Orange", logo: orangeLogo },
@@ -18,6 +22,10 @@ const clientLogos = [
   { name: "ABEA", logo: abeaLogo },
   { name: "ISCOM", logo: iscomLogo },
   { name: "ESIR", logo: esirLogo },
+  { name: "Bodemer", logo: bodemerLogo },
+  { name: "Askoria", logo: askoriaLogo },
+  { name: "Emmaüs", logo: emmausLogo },
+  { name: "Saint-Malo Agglomération", logo: saintMaloLogo },
 ];
 
 export const TrustSection = () => {

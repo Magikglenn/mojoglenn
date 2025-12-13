@@ -2,8 +2,20 @@ import { ExternalLink } from "lucide-react";
 import forumIscom from "@/assets/forum-iscom.jpg";
 import podcastGaliana from "@/assets/podcast-galiana.png";
 import podcastYoutube from "@/assets/podcast-youtube.jpg";
+import instaImage from "@/assets/insta.png";
+import glennBureau from "@/assets/glenn-bureau.jpg";
 
 const mediaPosts = [
+  {
+    title: "Suivez-moi sur Instagram",
+    link: "https://www.instagram.com/glenn.bzh/",
+    image: instaImage,
+  },
+  {
+    title: "Interview par Marion Bonglet",
+    link: "https://www.mbonglet-communication.com/post/glenn-le-bourhis-comment-parler-au-cerveau-des-clients",
+    image: glennBureau,
+  },
   {
     title: "Grand Forum de la communication - Iscom 2025",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7401666531157291008/",

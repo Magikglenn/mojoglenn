@@ -1,4 +1,4 @@
-import glennQuote from "@/assets/glenn-quote.jpg";
+import glennPortraitPolo from "@/assets/glenn-portrait-polo.jpg";
 
 interface QuoteSectionProps {
   quote: string;
@@ -22,7 +22,7 @@ export const QuoteSection = ({
             <div className="w-full lg:w-1/3 flex-shrink-0">
               <div className="aspect-square max-w-sm mx-auto rounded-2xl overflow-hidden shadow-elevated">
                 <img 
-                  src={glennQuote} 
+                  src={glennPortraitPolo} 
                   alt="Glenn Le Bourhis" 
                   className="w-full h-full object-cover"
                 />
@@ -32,10 +32,10 @@ export const QuoteSection = ({
 
           {/* Quote */}
           <div className={`flex-1 ${!showImage ? "max-w-3xl mx-auto text-center" : ""}`}>
-            <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed mb-6">
-              <span className="text-primary">"</span>
+            <blockquote className="font-display text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed mb-6">
+              <span className="text-accent">"</span>
               {quote}
-              <span className="text-primary">"</span>
+              <span className="text-accent">"</span>
             </blockquote>
 
             {variant === "extended" && extendedText && (

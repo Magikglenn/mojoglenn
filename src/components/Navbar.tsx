@@ -42,13 +42,13 @@ export const Navbar = () => {
         {/* Logo */}
         <a
           href="#"
-          className="text-2xl font-extrabold text-foreground hover:text-primary transition-colors tracking-tight"
+          className="text-2xl font-display font-bold text-foreground hover:text-accent transition-colors tracking-tight"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          Glenn<span className="text-primary">.</span>
+          Glenn<span className="text-accent">.</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -94,7 +94,7 @@ export const Navbar = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors text-left text-lg font-semibold"
+                className="text-foreground hover:text-accent transition-colors text-left text-lg font-semibold"
               >
                 {item.label}
               </button>

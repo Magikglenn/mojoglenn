@@ -26,11 +26,11 @@ export const TestimonialsSection = () => {
     <section id="testimonials" className="py-24 lg:py-32 section-gradient">
       <div className="container mx-auto px-6">
         <div className="mb-20">
-          <span className="text-primary font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
+          <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
             Témoignages
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight">
-            Ce que disent mes <span className="text-primary">clients</span>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
+            Ce que disent mes <span className="text-accent">clients</span>
           </h2>
         </div>
 
@@ -42,7 +42,7 @@ export const TestimonialsSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Quote icon */}
-              <Quote className="w-10 h-10 text-primary/20 mb-6" />
+              <Quote className="w-10 h-10 text-accent/30 mb-6" />
 
               {/* Quote */}
               <blockquote className="text-muted-foreground leading-relaxed mb-10">
@@ -51,14 +51,14 @@ export const TestimonialsSection = () => {
 
               {/* Author */}
               <div className="border-t border-border pt-6">
-                <p className="font-bold text-foreground text-lg">
+                <p className="font-display font-bold text-foreground text-lg">
                   {testimonial.author}
                 </p>
-                <p className="text-primary font-semibold">{testimonial.company}</p>
+                <p className="text-accent font-semibold">{testimonial.company}</p>
               </div>
 
               {/* Hover accent */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </div>
           ))}
         </div>

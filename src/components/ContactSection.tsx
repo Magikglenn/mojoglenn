@@ -13,7 +13,7 @@ export const ContactSection = () => {
           </h2>
 
           <p className="text-muted-foreground mb-10 text-lg leading-relaxed">
-            Prenez quelques minutes pour me parler de votre projet. Je vous recontacte rapidement pour échanger sur vos besoins.
+            Prenez quelques minutes pour me parler de votre projet. Je vous recontacte sous 48 heures pour échanger sur vos besoins.
           </p>
 
           <Button

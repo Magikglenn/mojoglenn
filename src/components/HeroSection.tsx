@@ -52,7 +52,7 @@ export const HeroSection = () => {
                 onClick={scrollToOffers}
                 className="group text-lg px-10 py-6"
               >
-                <img src={mojoVoodoo} alt="" className="w-6 h-6 invert" />
+                <img src={mojoVoodoo} alt="" className="w-6 h-6 opacity-70" style={{ filter: 'brightness(0) saturate(100%) invert(23%) sepia(10%) saturate(746%) hue-rotate(213deg) brightness(95%) contrast(88%)' }} />
                 Voir mes offres
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>

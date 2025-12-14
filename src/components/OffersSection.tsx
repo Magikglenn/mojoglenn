@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Search, Users, Mic, ArrowRight } from "lucide-react";
+import mojoVoodoo from "@/assets/mojo-voodoo.svg";
 
 const offers = [
   {
@@ -120,6 +121,7 @@ export const OffersSection = () => {
                   className="w-full group/btn font-semibold"
                   onClick={scrollToContact}
                 >
+                  <img src={mojoVoodoo} alt="" className="w-4 h-4 opacity-70" style={{ filter: 'brightness(0) saturate(100%) invert(23%) sepia(10%) saturate(746%) hue-rotate(213deg) brightness(95%) contrast(88%)' }} />
                   En savoir plus
                   <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>

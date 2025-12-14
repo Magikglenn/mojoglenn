@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import mojoVoodoo from "@/assets/mojo-voodoo.svg";
 
 export const ContactSection = () => {
   return (
@@ -26,6 +27,7 @@ export const ContactSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <img src={mojoVoodoo} alt="" className="w-5 h-5 opacity-70" style={{ filter: 'brightness(0) saturate(100%) invert(23%) sepia(10%) saturate(746%) hue-rotate(213deg) brightness(95%) contrast(88%)' }} />
               Remplir le questionnaire
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>

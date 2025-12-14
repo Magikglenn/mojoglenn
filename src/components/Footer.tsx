@@ -1,4 +1,5 @@
 import { Linkedin, Instagram, Phone, Mail, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const socialLinks = [
   {
@@ -81,7 +82,12 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="pt-10 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-muted-foreground text-sm">
           <p>© {new Date().getFullYear()} Glenn Le Bourhis. Tous droits réservés.</p>
-          <p>Bretagne, France</p>
+          <div className="flex items-center gap-6">
+            <Link to="/mentions-legales" className="hover:text-accent transition-colors">
+              Mentions légales
+            </Link>
+            <p>Bretagne, France</p>
+          </div>
         </div>
       </div>
     </footer>

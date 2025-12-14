@@ -41,7 +41,7 @@ export const AboutSection = () => {
               </p>
               
               <p>
-                Comme un bon ami, une marque ou une entreprise doit inspirer confiance avant tout. Ce sentiment crée une relation qui, à très court terme, rend votre communication plus efficace. Elle consolide votre notoriété, elle génère de la recommandation, elle muscle votre marque-employeur.
+                Comme un bon ami, une entreprise doit inspirer confiance avant tout. Ce sentiment crée une relation qui, à très court terme, rend votre communication plus efficace. Elle consolide votre notoriété, elle génère de la recommandation, elle muscle votre marque-employeur.
               </p>
               
               <p>

@@ -15,21 +15,21 @@ import blcLogo from "@/assets/logos/blc-automotive.png";
 import sherpaLogo from "@/assets/logos/sherpa.svg";
 
 const clientLogos = [
-  { name: "Orange", logo: orangeLogo },
-  { name: "Total Energies", logo: totalEnergiesLogo },
-  { name: "Le Village", logo: leVillageLogo },
-  { name: "Global Services", logo: globalServicesLogo },
-  { name: "Klaxon", logo: klaxonLogo },
-  { name: "AJIR Bretagne", logo: ajirLogo },
-  { name: "ABEA", logo: abeaLogo },
-  { name: "ISCOM", logo: iscomLogo },
-  { name: "ESIR", logo: esirLogo },
-  { name: "Bodemer", logo: bodemerLogo },
-  { name: "Askoria", logo: askoriaLogo },
-  { name: "Emmaüs", logo: emmausLogo },
-  { name: "Saint-Malo Agglomération", logo: saintMaloLogo },
-  { name: "BLC Automotive", logo: blcLogo },
-  { name: "Sherpa", logo: sherpaLogo },
+  { name: "Orange", logo: orangeLogo, large: false },
+  { name: "Total Energies", logo: totalEnergiesLogo, large: false },
+  { name: "Le Village", logo: leVillageLogo, large: false },
+  { name: "Global Services", logo: globalServicesLogo, large: false },
+  { name: "Klaxon", logo: klaxonLogo, large: false },
+  { name: "AJIR Bretagne", logo: ajirLogo, large: false },
+  { name: "ABEA", logo: abeaLogo, large: false },
+  { name: "ISCOM", logo: iscomLogo, large: false },
+  { name: "ESIR", logo: esirLogo, large: false },
+  { name: "Bodemer", logo: bodemerLogo, large: true },
+  { name: "Askoria", logo: askoriaLogo, large: false },
+  { name: "Emmaüs", logo: emmausLogo, large: true },
+  { name: "Saint-Malo Agglomération", logo: saintMaloLogo, large: false },
+  { name: "BLC Automotive", logo: blcLogo, large: true },
+  { name: "Sherpa", logo: sherpaLogo, large: true },
 ];
 
 export const TrustSection = () => {
@@ -49,7 +49,7 @@ export const TrustSection = () => {
               <img
                 src={client.logo}
                 alt={`Logo ${client.name}`}
-                className="h-10 md:h-14 w-auto object-contain"
+                className={`${client.large ? 'h-16 md:h-20' : 'h-10 md:h-14'} w-auto object-contain`}
               />
             </div>
           ))}

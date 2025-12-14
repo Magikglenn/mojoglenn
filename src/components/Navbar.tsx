@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import mojoLogo from "@/assets/mojo-logo.svg";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -42,13 +43,17 @@ export const Navbar = () => {
         {/* Logo */}
         <a
           href="#"
-          className="text-2xl font-display font-bold text-foreground hover:text-accent transition-colors tracking-tight"
+          className="hover:opacity-80 transition-opacity"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          Glenn<span className="text-accent">.</span>
+          <img 
+            src={mojoLogo} 
+            alt="MOJO" 
+            className="h-8 md:h-10 w-auto invert"
+          />
         </a>
 
         {/* Desktop Navigation */}

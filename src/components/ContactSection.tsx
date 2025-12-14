@@ -40,7 +40,7 @@ export const ContactSection = () => {
               className="group bg-vert text-gris border-vert hover:bg-vert/90 hover:border-vert/90"
               asChild
             >
-              <a href="mailto:contact@exemple.com">
+              <a href="mailto:connexion@glenn.bzh">
                 <img src={mojoVoodoo} alt="" className="w-5 h-5 opacity-70" style={{ filter: 'brightness(0) saturate(100%) invert(15%) sepia(10%) saturate(500%) hue-rotate(200deg) brightness(95%) contrast(90%)' }} />
                 Envoyer un mail
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />

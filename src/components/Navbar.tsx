@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import mojoLogo from "@/assets/mojo-logo.svg";
+import mojoVoodoo from "@/assets/mojo-voodoo.svg";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -77,6 +78,7 @@ export const Navbar = () => {
             onClick={() => scrollToSection("#contact")}
             className="font-semibold"
           >
+            <img src={mojoVoodoo} alt="" className="w-5 h-5 opacity-70" style={{ filter: 'brightness(0) saturate(100%) invert(23%) sepia(10%) saturate(746%) hue-rotate(213deg) brightness(95%) contrast(88%)' }} />
             Parlons de votre projet
           </Button>
         </div>
@@ -110,6 +112,7 @@ export const Navbar = () => {
               className="mt-4"
               onClick={() => scrollToSection("#contact")}
             >
+              <img src={mojoVoodoo} alt="" className="w-5 h-5 opacity-70" style={{ filter: 'brightness(0) saturate(100%) invert(23%) sepia(10%) saturate(746%) hue-rotate(213deg) brightness(95%) contrast(88%)' }} />
               Parlons de votre projet
             </Button>
           </div>

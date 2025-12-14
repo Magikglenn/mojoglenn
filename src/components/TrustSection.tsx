@@ -11,6 +11,8 @@ import bodemerLogo from "@/assets/logos/bodemer.jpg";
 import askoriaLogo from "@/assets/logos/askoria.png";
 import emmausLogo from "@/assets/logos/emmaus.png";
 import saintMaloLogo from "@/assets/logos/saint-malo-agglo.png";
+import blcLogo from "@/assets/logos/blc-automotive.png";
+import sherpaLogo from "@/assets/logos/sherpa.svg";
 
 const clientLogos = [
   { name: "Orange", logo: orangeLogo },
@@ -26,6 +28,8 @@ const clientLogos = [
   { name: "Askoria", logo: askoriaLogo },
   { name: "Emmaüs", logo: emmausLogo },
   { name: "Saint-Malo Agglomération", logo: saintMaloLogo },
+  { name: "BLC Automotive", logo: blcLogo },
+  { name: "Sherpa", logo: sherpaLogo },
 ];
 
 export const TrustSection = () => {

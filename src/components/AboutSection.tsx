@@ -25,7 +25,7 @@ export const AboutSection = () => {
           {/* Why work with me */}
           <div className="order-1 lg:order-2">
             <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
-              Pourquoi moi
+              Je suis Glenn Le Bourhis
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-10 tracking-tight leading-tight">
               Pourquoi travailler{" "}

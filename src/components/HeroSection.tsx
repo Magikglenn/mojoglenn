@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import glennHero from "@/assets/glenn-hero.jpg";
+import mojoVoodoo from "@/assets/mojo-voodoo.svg";
 
 export const HeroSection = () => {
   const scrollToOffers = () => {
@@ -26,7 +27,7 @@ export const HeroSection = () => {
             {/* Main headline - Bold Grotesk */}
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-8 animate-fade-in-up leading-[1.1] tracking-tight">
               Du branding,{" "}
-              <span className="scribble-underline text-accent">de la confiance</span>,
+              <span className="highlight-box">de la confiance</span>,
               <br />
               <span className="text-accent">des clients.</span>
             </h1>
@@ -51,8 +52,9 @@ export const HeroSection = () => {
                 onClick={scrollToOffers}
                 className="group text-lg px-10 py-6"
               >
+                <img src={mojoVoodoo} alt="" className="w-6 h-6 invert" />
                 Voir mes offres
-                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>

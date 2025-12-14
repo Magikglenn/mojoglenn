@@ -119,14 +119,27 @@
     @apply scale-x-100 origin-left;
   }
 
-  /* Scribble underline - hand-drawn style with new accent color */
-  .scribble-underline {
+  /* Bold highlight box - visible marker style */
+  .highlight-box {
     @apply relative inline-block;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12'%3E%3Cpath d='M2 8c30-4 60 4 90-2s60-6 90 2' stroke='%23ffa6ec' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 100% 12px;
-    padding-bottom: 8px;
+    background: linear-gradient(transparent 40%, hsl(var(--accent) / 0.4) 40%);
+    padding: 0 0.15em;
+  }
+
+  /* Alternative: Bold underline */
+  .bold-underline {
+    @apply relative inline-block;
+    text-decoration: underline;
+    text-decoration-color: hsl(var(--accent));
+    text-decoration-thickness: 0.15em;
+    text-underline-offset: 0.15em;
+  }
+
+  /* Thick marker stroke */
+  .marker-highlight {
+    @apply relative inline-block px-2;
+    background: hsl(var(--accent) / 0.3);
+    border-radius: 4px;
   }
 
   /* Gradient text */

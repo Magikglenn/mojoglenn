@@ -24,7 +24,7 @@ export const ContactSection = () => {
               asChild
             >
               <a
-                href="https://tally.so"
+                href="https://tally.so/r/3jVglY"
                 target="_blank"
                 rel="noopener noreferrer"
               >

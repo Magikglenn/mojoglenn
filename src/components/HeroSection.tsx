@@ -61,12 +61,14 @@ export const HeroSection = () => {
 
           {/* Image */}
           <div className="animate-fade-in-delay-2 order-first lg:order-last">
-            <div className="relative">
+          <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-elevated">
-                <img 
-                  src={glennHero} 
-                  alt="Glenn Le Bourhis - Expert en communication et neuromarketing" 
-                  className="w-full h-full object-cover"
+                <iframe
+                  src="https://www.youtube.com/embed/OAHxJ5tNWDE"
+                  title="Présentation MOJO"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
                 />
               </div>
               {/* Decorative elements */}

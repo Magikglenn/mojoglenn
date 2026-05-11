@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import mojoLogo from "@/assets/mojo-logo.svg";
 import mojoVoodoo from "@/assets/mojo-voodoo.svg";
 
-const navItems = [
-  { label: "Services", href: "#services" },
-  { label: "À propos", href: "#about" },
-  { label: "Témoignages", href: "#testimonials" },
-  { label: "Offres", href: "#offers" },
-  { label: "FAQ", href: "#faq" },
+type NavItem = { label: string; href: string; type: "anchor" | "route" };
+
+const navItems: NavItem[] = [
+  { label: "Services", href: "#services", type: "anchor" },
+  { label: "À propos", href: "/a-propos", type: "route" },
+  { label: "Témoignages", href: "#testimonials", type: "anchor" },
+  { label: "Offres", href: "#offers", type: "anchor" },
+  { label: "FAQ", href: "#faq", type: "anchor" },
 ];
 
 export const Navbar = () => {
@@ -59,15 +62,25 @@ export const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-10">
-          {navItems.map((item) => (
-            <button
-              key={item.label}
-              onClick={() => scrollToSection(item.href)}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-semibold uppercase tracking-wider"
-            >
-              {item.label}
-            </button>
-          ))}
+          {navItems.map((item) =>
+            item.type === "route" ? (
+              <Link
+                key={item.label}
+                to={item.href}
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-semibold uppercase tracking-wider"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <button
+                key={item.label}
+                onClick={() => scrollToSection(item.href)}
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-semibold uppercase tracking-wider"
+              >
+                {item.label}
+              </button>
+            )
+          )}
         </div>
 
         {/* CTA Button */}
@@ -97,15 +110,26 @@ export const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border animate-fade-in">
           <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-accent transition-colors text-left text-lg font-semibold"
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) =>
+              item.type === "route" ? (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-foreground hover:text-accent transition-colors text-left text-lg font-semibold"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={item.label}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-foreground hover:text-accent transition-colors text-left text-lg font-semibold"
+                >
+                  {item.label}
+                </button>
+              )
+            )}
             <Button
               variant="hero"
               size="lg"

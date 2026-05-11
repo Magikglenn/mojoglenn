@@ -83,6 +83,9 @@ export const Footer = () => {
         <div className="pt-10 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-muted-foreground text-sm">
           <p>© {new Date().getFullYear()} Glenn Le Bourhis. Tous droits réservés.</p>
           <div className="flex items-center gap-6">
+            <Link to="/a-propos" className="hover:text-accent transition-colors">
+              À propos
+            </Link>
             <Link to="/mentions-legales" className="hover:text-accent transition-colors">
               Mentions légales
             </Link>

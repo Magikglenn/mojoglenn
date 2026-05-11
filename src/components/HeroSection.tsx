@@ -37,7 +37,7 @@ export const HeroSection = () => {
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto lg:mx-0 animate-fade-in-delay-1 leading-relaxed font-medium">
-              Directeur de la communication externalisé, je vous aide à structurer, consolider ou déployer votre image de marque en utilisant les sciences comportementales et le neuromarketing.
+              Consultant en branding, storytelling et neuromarketing — j'interviens comme directeur de la communication externalisé pour aider dirigeants et équipes marketing à structurer une image de marque forte, en Bretagne et partout en France.
             </p>
 
             {/* Tags */}

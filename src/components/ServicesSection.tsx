@@ -5,7 +5,7 @@ const services = [
     icon: Sparkles,
     number: "01",
     title: "BRANDING",
-    subtitle: "Capter l'attention de votre marché",
+    subtitle: "Consultant en stratégie de marque – Bretagne & France",
     description:
       "Votre marque est un aimant. Quand elle reflète ce que vous êtes profondément, elle attire naturellement les bons clients. Ensemble, on clarifie votre positionnement, vos valeurs et votre singularité pour faire émerger une identité forte, cohérente et mémorable.",
     color: "bleu" as const,
@@ -14,7 +14,7 @@ const services = [
     icon: BookOpen,
     number: "02",
     title: "STORYTELLING",
-    subtitle: "Faites partie de l'histoire de votre client",
+    subtitle: "Faire de votre histoire un outil de vente",
     description:
       "Vous ne vendez pas un produit. Vous vendez un rôle dans l'histoire de votre public. Je vous aide à construire un récit qui crée un lien émotionnel, renforce la confiance et donne envie de passer à l'action.",
     color: "violet" as const,
@@ -23,7 +23,7 @@ const services = [
     icon: Brain,
     number: "03",
     title: "NEUROMARKETING",
-    subtitle: "Les neurosciences pour mieux comprendre le cerveau",
+    subtitle: "Sciences comportementales appliquées à votre communication",
     description:
       "95 % des décisions sont émotionnelles. Grâce aux sciences comportementales, on identifie ce qui déclenche l'attention, l'intérêt et le passage à l'action. Une communication plus humaine, plus intuitive, plus efficace.",
     color: "vert" as const,
@@ -36,9 +36,7 @@ export const ServicesSection = () => {
       <div className="container mx-auto px-6">
         <div className="mb-20">
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
-            Comment on va booster
-            <br />
-            <span className="text-accent">votre communication</span>
+            Branding, Storytelling et Neuromarketing : boostez votre communication
           </h2>
         </div>
 

@@ -12,7 +12,7 @@ export const AboutSection = () => {
               <div className="aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden shadow-elevated">
                 <img 
                   src={glennPortrait} 
-                  alt="Glenn Le Bourhis - Portrait" 
+                  alt="Glenn Le Bourhis, consultant en branding et neuromarketing en Bretagne" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -85,7 +85,7 @@ export const AboutSection = () => {
             <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-elevated">
               <img 
                 src={glennIphone} 
-                alt="Glenn Le Bourhis avec iPhone" 
+                alt="Glenn Le Bourhis, directeur de communication externalisé, expert storytelling et sciences comportementales" 
                 className="w-full h-full object-cover"
               />
             </div>

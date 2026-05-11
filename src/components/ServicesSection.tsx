@@ -25,7 +25,7 @@ const services = [
     title: "NEUROMARKETING",
     subtitle: "Sciences comportementales appliquées à votre communication",
     description:
-      "95 % des décisions sont émotionnelles. Grâce aux sciences comportementales, on identifie ce qui déclenche l'attention, l'intérêt et le passage à l'action. Une communication plus humaine, plus intuitive, plus efficace.",
+      "95 % des décisions sont émotionnelles (source : Harvard Business School, Gerald Zaltman). Grâce aux sciences comportementales et aux travaux de chercheurs comme Daniel Kahneman et Antonio Damasio, on identifie ce qui déclenche l'attention, l'intérêt et le passage à l'action chez vos clients.",
     color: "vert" as const,
   },
 ];

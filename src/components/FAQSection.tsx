@@ -31,6 +31,26 @@ const faqs = [
     answer:
       "Des artisans aux grands groupes, tout le monde a une histoire à raconter. J'aide les solopreneurs comme les équipes marketing au sein de plus grosses structures. Si vous avez des clients, ils ont un cerveau, donc je peux vous aider.",
   },
+  {
+    question: "Intervenez-vous en dehors de la Bretagne ?",
+    answer:
+      "Oui. Je suis basé en Bretagne mais j'interviens dans toute la France, en présentiel comme en distanciel. Une grande partie de mes accompagnements se font en visioconférence, ce qui permet de travailler efficacement avec des clients à Paris, Lyon, Bordeaux ou partout ailleurs.",
+  },
+  {
+    question: "Quels sont vos tarifs ?",
+    answer:
+      "Mes tarifs varient selon la nature et la durée de la mission. Un accompagnement stratégique démarre généralement à partir de 3 mois. Je propose également des formats courts pour les formations et conférences. Contactez-moi pour un échange et un devis personnalisé.",
+  },
+  {
+    question: "Quelle est votre méthode de travail ?",
+    answer:
+      "Je commence toujours par une phase de diagnostic : comprendre votre marché, vos clients, votre positionnement actuel et vos objectifs. Ensuite, on construit ensemble une stratégie de communication ancrée dans les sciences comportementales. Enfin, je vous aide à la rendre opérationnelle pour vos équipes.",
+  },
+  {
+    question: "Proposez-vous des formations en neuromarketing pour les équipes ?",
+    answer:
+      "Oui. Je conçois et anime des formations sur mesure en neuromarketing, branding et storytelling pour les équipes marketing, communication et commerciale. Ces formations peuvent se tenir en interne dans votre entreprise ou dans le cadre d'écoles et d'organismes de formation.",
+  },
 ];
 
 export const FAQSection = () => {

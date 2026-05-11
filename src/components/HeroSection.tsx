@@ -31,6 +31,9 @@ export const HeroSection = () => {
               <br />
               <span className="text-accent">des clients.</span>
             </h1>
+            <span className="sr-only">
+              Consultant en branding, storytelling et neuromarketing en Bretagne et en France
+            </span>
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto lg:mx-0 animate-fade-in-delay-1 leading-relaxed font-medium">

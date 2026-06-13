@@ -135,7 +135,7 @@ const hackathonGallery = [
     alt: "Participants en atelier de hackathon animés autour d'une table de travail.",
   },
   {
-    src: heroPhoto.url,
+    src: glennTotal.url,
     alt: "Glenn Le Bourhis lors d'un événement avec un support visuel lié à un atelier prospectif.",
   },
 ] as const;

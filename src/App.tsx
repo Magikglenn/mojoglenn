@@ -8,6 +8,7 @@ import MentionsLegales from "./pages/MentionsLegales";
 import APropos from "./pages/APropos";
 import AteliersDuFutur from "./pages/AteliersDuFutur";
 import Unsubscribe from "./pages/Unsubscribe";
+import Conferences from "./pages/Conferences";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/ateliers-du-futur" element={<AteliersDuFutur />} />
           <Route path="/prospective" element={<AteliersDuFutur />} />
           <Route path="/unsubscribe" element={<Unsubscribe />} />
+          <Route path="/conferences" element={<Conferences />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

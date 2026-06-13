@@ -17,6 +17,9 @@ import {
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import bullshitCover from "@/assets/bullshit-couv-levitation.png.asset.json";
+import glennPortrait from "@/assets/glenn-portrait.jpg.asset.json";
+import glennConference from "@/assets/glenn-conference-iscom.jpg.asset.json";
 
 const conferences = [
   {

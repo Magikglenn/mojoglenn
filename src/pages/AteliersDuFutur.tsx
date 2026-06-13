@@ -219,7 +219,9 @@ const AteliersDuFutur = () => {
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        <div className="container mx-auto px-6 py-16 md:py-20">
+        <Navbar />
+
+        <div className="container mx-auto px-6 pt-32 pb-16 md:pt-36 md:pb-20">
           <Button variant="ghost" asChild className="mb-8">
             <Link to="/" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />

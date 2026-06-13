@@ -335,12 +335,6 @@ const AteliersDuFutur = () => {
                   <p>
                     Chaque carte a été pensée spécifiquement pour l'atelier. Elles apportent une dimension visuelle forte, mémorable et immédiatement exploitable dans les échanges.
                   </p>
-                  <div className="bg-card border border-border/60 rounded-lg p-5">
-                    <p className="text-sm uppercase tracking-[0.2em] text-accent font-semibold mb-2">Galerie évolutive</p>
-                    <p className="text-sm text-muted-foreground">
-                      Cette section est prête à accueillir d'autres visuels de cartes au fil de vos prochains ateliers et nouvelles saisons de scénarios.
-                    </p>
-                  </div>
                 </div>
               </div>
 

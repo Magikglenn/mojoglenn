@@ -631,6 +631,8 @@ const AteliersDuFutur = () => {
             </div>
           </div>
         </section>
+
+        <Footer />
       </div>
     </>
   );

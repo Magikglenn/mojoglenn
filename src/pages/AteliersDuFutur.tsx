@@ -16,7 +16,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
-import heroPhoto from "@/assets/ateliers-glenn-total.jpg.asset.json";
+import heroPhoto from "@/assets/ateliers-hero-payer-publier.png.asset.json";
+import glennTotal from "@/assets/ateliers-glenn-total.jpg.asset.json";
 import hackathonPhoto from "@/assets/ateliers-hackathon-room.jpeg.asset.json";
 import cartePolitique from "@/assets/ateliers-carte-politique.png.asset.json";
 import carteSociete from "@/assets/ateliers-carte-societe.png.asset.json";

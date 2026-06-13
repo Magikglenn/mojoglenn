@@ -17,6 +17,9 @@ import {
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import bullshitCover from "@/assets/bullshit-couv-levitation.png.asset.json";
+import glennPortrait from "@/assets/glenn-portrait.jpg.asset.json";
+import glennConference from "@/assets/glenn-conference-iscom.jpg.asset.json";
 
 const conferences = [
   {
@@ -191,12 +194,8 @@ const Conferences = () => {
             </div>
 
             <div className="relative">
-              <div className="aspect-[4/5] overflow-hidden rounded-lg border border-border/60 shadow-elevated bg-card flex items-center justify-center">
-                <div className="text-center p-8 text-muted-foreground">
-                  <Mic2 className="w-12 h-12 mx-auto mb-4 text-accent" />
-                  <p className="text-sm uppercase tracking-[0.2em] font-semibold mb-2">Emplacement photo</p>
-                  <p className="text-sm">Photo de Glenn Le Bourhis à remplacer</p>
-                </div>
+              <div className="aspect-[4/5] overflow-hidden rounded-lg border border-border/60 shadow-elevated bg-card">
+                <img src={glennPortrait.url} alt="Glenn Le Bourhis, conférencier" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-5 -left-5 bg-card border border-border/60 rounded-lg px-5 py-4 shadow-card max-w-xs">
                 <p className="text-sm uppercase tracking-[0.2em] text-accent font-semibold mb-2">Présentiel · 1h</p>
@@ -213,12 +212,8 @@ const Conferences = () => {
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-center">
               <div className="relative">
-                <div className="aspect-[3/4] max-w-sm mx-auto overflow-hidden rounded-lg border border-border/60 shadow-elevated bg-background flex items-center justify-center">
-                  <div className="text-center p-8 text-muted-foreground">
-                    <BookOpen className="w-12 h-12 mx-auto mb-4 text-accent" />
-                    <p className="text-sm uppercase tracking-[0.2em] font-semibold mb-2">Emplacement couverture</p>
-                    <p className="text-sm">Couverture du livre à remplacer</p>
-                  </div>
+                <div className="aspect-[3/4] max-w-sm mx-auto overflow-hidden rounded-lg">
+                  <img src={bullshitCover.url} alt="Couverture du livre Bullshit Marketing de Glenn Le Bourhis" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -277,13 +272,16 @@ const Conferences = () => {
                     key={conf.id}
                     className="bg-card border border-border/60 rounded-lg p-8 lg:p-10 shadow-card flex flex-col card-hover"
                   >
-                    <div className="flex items-center gap-4 mb-6">
+                    <div className="flex items-center gap-4 mb-5">
                       <div className="w-12 h-12 rounded-lg bg-accent/15 flex items-center justify-center shrink-0">
                         <Icon className="w-5 h-5 text-accent" />
                       </div>
-                      <p className="text-accent font-semibold text-sm uppercase tracking-[0.2em]">{conf.tag}</p>
+                      <p className="text-muted-foreground font-semibold text-xs uppercase tracking-[0.25em]">Conférence · 1h</p>
                     </div>
-                    <h3 className="font-display text-2xl md:text-3xl font-bold mb-5 tracking-tight">{conf.title}</h3>
+                    <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight leading-[0.95] uppercase">
+                      <span className="highlight-box">{conf.tag}</span>
+                    </h3>
+                    <p className="font-display text-xl md:text-2xl font-semibold mb-5 tracking-tight text-foreground">{conf.title}</p>
                     <p className="text-muted-foreground leading-relaxed mb-6">{conf.pitch}</p>
 
                     <ul className="space-y-2 text-sm text-muted-foreground mb-8">
@@ -330,21 +328,15 @@ const Conferences = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
-              {[1, 2].map((n) => (
-                <figure key={n} className="bg-background border border-border/60 rounded-lg overflow-hidden shadow-card">
-                  <div className="aspect-[4/3] bg-muted/30 flex items-center justify-center">
-                    <div className="text-center p-8 text-muted-foreground">
-                      <Mic2 className="w-10 h-10 mx-auto mb-3 text-accent" />
-                      <p className="text-sm uppercase tracking-[0.2em] font-semibold mb-1">Emplacement photo {n}</p>
-                      <p className="text-sm">Glenn en conférence — à remplacer</p>
-                    </div>
-                  </div>
-                  <figcaption className="px-4 py-3 text-sm text-muted-foreground">
-                    Photo d'intervention — emplacement prêt à accueillir un visuel.
-                  </figcaption>
-                </figure>
-              ))}
+            <div className="grid md:grid-cols-1 gap-5 max-w-4xl">
+              <figure className="bg-background border border-border/60 rounded-lg overflow-hidden shadow-card">
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img src={glennConference.url} alt="Glenn Le Bourhis en conférence au Forum ISCOM" className="w-full h-full object-cover" />
+                </div>
+                <figcaption className="px-4 py-3 text-sm text-muted-foreground">
+                  Glenn en conférence — Forum ISCOM.
+                </figcaption>
+              </figure>
             </div>
           </div>
         </section>

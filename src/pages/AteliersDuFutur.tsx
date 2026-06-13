@@ -16,7 +16,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
-import heroPhoto from "@/assets/ateliers-glenn-total.jpg.asset.json";
+import heroPhoto from "@/assets/ateliers-hero-payer-publier.png.asset.json";
+import glennTotal from "@/assets/ateliers-glenn-total.jpg.asset.json";
 import hackathonPhoto from "@/assets/ateliers-hackathon-room.jpeg.asset.json";
 import cartePolitique from "@/assets/ateliers-carte-politique.png.asset.json";
 import carteSociete from "@/assets/ateliers-carte-societe.png.asset.json";
@@ -134,7 +135,7 @@ const hackathonGallery = [
     alt: "Participants en atelier de hackathon animés autour d'une table de travail.",
   },
   {
-    src: heroPhoto.url,
+    src: glennTotal.url,
     alt: "Glenn Le Bourhis lors d'un événement avec un support visuel lié à un atelier prospectif.",
   },
 ] as const;
@@ -262,7 +263,7 @@ const AteliersDuFutur = () => {
               <div className="aspect-[4/5] overflow-hidden rounded-lg border border-border/60 shadow-elevated bg-card">
                 <img
                   src={heroPhoto.url}
-                  alt="Glenn Le Bourhis présentant un univers de prospective lors d'un atelier d'innovation."
+                  alt="Carte illustrée des Ateliers du Futur — scénario Payer pour publier, catégorie Politique."
                   className="w-full h-full object-cover"
                   loading="eager"
                 />
@@ -334,12 +335,6 @@ const AteliersDuFutur = () => {
                   <p>
                     Chaque carte a été pensée spécifiquement pour l'atelier. Elles apportent une dimension visuelle forte, mémorable et immédiatement exploitable dans les échanges.
                   </p>
-                  <div className="bg-card border border-border/60 rounded-lg p-5">
-                    <p className="text-sm uppercase tracking-[0.2em] text-accent font-semibold mb-2">Galerie évolutive</p>
-                    <p className="text-sm text-muted-foreground">
-                      Cette section est prête à accueillir d'autres visuels de cartes au fil de vos prochains ateliers et nouvelles saisons de scénarios.
-                    </p>
-                  </div>
                 </div>
               </div>
 

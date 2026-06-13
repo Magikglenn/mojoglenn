@@ -263,7 +263,7 @@ const AteliersDuFutur = () => {
               <div className="aspect-[4/5] overflow-hidden rounded-lg border border-border/60 shadow-elevated bg-card">
                 <img
                   src={heroPhoto.url}
-                  alt="Glenn Le Bourhis présentant un univers de prospective lors d'un atelier d'innovation."
+                  alt="Carte illustrée des Ateliers du Futur — scénario Payer pour publier, catégorie Politique."
                   className="w-full h-full object-cover"
                   loading="eager"
                 />

@@ -9,6 +9,7 @@ import APropos from "./pages/APropos";
 import AteliersDuFutur from "./pages/AteliersDuFutur";
 import Unsubscribe from "./pages/Unsubscribe";
 import Conferences from "./pages/Conferences";
+import NeuromarketingRennes from "./pages/NeuromarketingRennes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

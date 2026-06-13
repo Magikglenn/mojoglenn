@@ -1,4 +1,4 @@
-import { useMemo, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft, ArrowRight, Briefcase, Building2, Globe2, Lightbulb, Mail, Phone, Rocket, ShieldAlert, Sparkles, Trees, Users, Cpu } from "lucide-react";

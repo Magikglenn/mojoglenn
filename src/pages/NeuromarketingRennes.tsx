@@ -11,6 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import glennPortrait from "@/assets/glenn-portrait.jpg.asset.json";
+import confNeuro from "@/assets/conf-neuromarketing-rennes.png.asset.json";
 
 const faqs = [
   {
@@ -45,7 +46,7 @@ const interventions = [
     title: "Conférence neuromarketing",
     text: "Une heure pour bousculer les certitudes de votre équipe ou de votre public sur le fonctionnement réel du cerveau face au marketing. Idéale pour un séminaire d'entreprise, un événement professionnel ou une keynote grand public.",
     highlight: "Conférence phare : \"Neuromarketing : les secrets du cerveau pour convaincre\"",
-    cta: { label: "Voir le détail de la conférence neuromarketing", to: "/conferences" },
+    cta: { label: "Accéder aux conférences", to: "/conferences" },
     variant: "hero" as const,
   },
   {
@@ -142,8 +143,8 @@ const NeuromarketingRennes = () => {
             <div className="relative">
               <div className="aspect-[4/5] overflow-hidden rounded-lg border border-border/60 shadow-elevated bg-card">
                 <img
-                  src={glennPortrait.url}
-                  alt="Glenn Le Bourhis, spécialiste neuromarketing à Rennes"
+                  src={confNeuro.url}
+                  alt="Glenn Le Bourhis en conférence neuromarketing à Rennes"
                   className="w-full h-full object-cover"
                 />
               </div>

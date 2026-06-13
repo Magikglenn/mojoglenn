@@ -9,6 +9,7 @@ import APropos from "./pages/APropos";
 import AteliersDuFutur from "./pages/AteliersDuFutur";
 import Unsubscribe from "./pages/Unsubscribe";
 import Conferences from "./pages/Conferences";
+import NeuromarketingRennes from "./pages/NeuromarketingRennes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/prospective" element={<AteliersDuFutur />} />
           <Route path="/unsubscribe" element={<Unsubscribe />} />
           <Route path="/conferences" element={<Conferences />} />
+          <Route path="/neuromarketing-rennes" element={<NeuromarketingRennes />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

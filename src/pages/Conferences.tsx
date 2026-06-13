@@ -328,21 +328,15 @@ const Conferences = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
-              {[1, 2].map((n) => (
-                <figure key={n} className="bg-background border border-border/60 rounded-lg overflow-hidden shadow-card">
-                  <div className="aspect-[4/3] bg-muted/30 flex items-center justify-center">
-                    <div className="text-center p-8 text-muted-foreground">
-                      <Mic2 className="w-10 h-10 mx-auto mb-3 text-accent" />
-                      <p className="text-sm uppercase tracking-[0.2em] font-semibold mb-1">Emplacement photo {n}</p>
-                      <p className="text-sm">Glenn en conférence — à remplacer</p>
-                    </div>
-                  </div>
-                  <figcaption className="px-4 py-3 text-sm text-muted-foreground">
-                    Photo d'intervention — emplacement prêt à accueillir un visuel.
-                  </figcaption>
-                </figure>
-              ))}
+            <div className="grid md:grid-cols-1 gap-5 max-w-4xl">
+              <figure className="bg-background border border-border/60 rounded-lg overflow-hidden shadow-card">
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img src={glennConference.url} alt="Glenn Le Bourhis en conférence au Forum ISCOM" className="w-full h-full object-cover" />
+                </div>
+                <figcaption className="px-4 py-3 text-sm text-muted-foreground">
+                  Glenn en conférence — Forum ISCOM.
+                </figcaption>
+              </figure>
             </div>
           </div>
         </section>

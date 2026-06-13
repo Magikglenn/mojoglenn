@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Search, Users, Mic, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import mojoVoodoo from "@/assets/mojo-voodoo.svg";
 
 const offers = [
@@ -34,10 +35,12 @@ const offers = [
     description: "Des conférences de 1 heure pour changer de perspective et mieux comprendre le cerveau humain.",
     price: "900 € HT",
     color: "vert" as const,
+    href: "/conferences",
   },
 ];
 
 export const OffersSection = () => {
+  const navigate = useNavigate();
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
     if (element) {
@@ -119,7 +122,7 @@ export const OffersSection = () => {
                 <Button
                   variant={offer.featured ? "hero" : "outline"}
                   className="w-full group/btn font-semibold"
-                  onClick={scrollToContact}
+                  onClick={() => ('href' in offer && offer.href ? navigate(offer.href) : scrollToContact())}
                 >
                   <img src={mojoVoodoo} alt="" className="w-4 h-4 opacity-70" style={{ filter: 'brightness(0) saturate(100%) invert(23%) sepia(10%) saturate(746%) hue-rotate(213deg) brightness(95%) contrast(88%)' }} />
                   En savoir plus

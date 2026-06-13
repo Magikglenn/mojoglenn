@@ -194,12 +194,8 @@ const Conferences = () => {
             </div>
 
             <div className="relative">
-              <div className="aspect-[4/5] overflow-hidden rounded-lg border border-border/60 shadow-elevated bg-card flex items-center justify-center">
-                <div className="text-center p-8 text-muted-foreground">
-                  <Mic2 className="w-12 h-12 mx-auto mb-4 text-accent" />
-                  <p className="text-sm uppercase tracking-[0.2em] font-semibold mb-2">Emplacement photo</p>
-                  <p className="text-sm">Photo de Glenn Le Bourhis à remplacer</p>
-                </div>
+              <div className="aspect-[4/5] overflow-hidden rounded-lg border border-border/60 shadow-elevated bg-card">
+                <img src={glennPortrait.url} alt="Glenn Le Bourhis, conférencier" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-5 -left-5 bg-card border border-border/60 rounded-lg px-5 py-4 shadow-card max-w-xs">
                 <p className="text-sm uppercase tracking-[0.2em] text-accent font-semibold mb-2">Présentiel · 1h</p>

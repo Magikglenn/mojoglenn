@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import MentionsLegales from "./pages/MentionsLegales";
 import APropos from "./pages/APropos";
 import AteliersDuFutur from "./pages/AteliersDuFutur";
+import Unsubscribe from "./pages/Unsubscribe";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/a-propos" element={<APropos />} />
           <Route path="/ateliers-du-futur" element={<AteliersDuFutur />} />
           <Route path="/prospective" element={<AteliersDuFutur />} />
+          <Route path="/unsubscribe" element={<Unsubscribe />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

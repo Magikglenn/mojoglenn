@@ -1,4 +1,4 @@
-import { useMemo, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft, ArrowRight, Briefcase, Building2, Globe2, Lightbulb, Mail, Phone, Rocket, ShieldAlert, Sparkles, Trees, Users, Cpu } from "lucide-react";
@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import heroPhoto from "@/assets/ateliers-hero-payer-publier.png.asset.json";
 import glennTotal from "@/assets/ateliers-glenn-total.jpg.asset.json";
 import hackathonPhoto from "@/assets/ateliers-hackathon-room.jpeg.asset.json";
@@ -149,30 +150,13 @@ const AteliersDuFutur = () => {
     format: "",
     message: "",
   });
-
-  const contactHref = useMemo(() => {
-    const subject = encodeURIComponent("Demande de devis — Les Ateliers du Futur");
-    const body = encodeURIComponent(
-      [
-        `Nom : ${formData.nom}`,
-        `Entreprise : ${formData.entreprise}`,
-        `Email : ${formData.email}`,
-        `Téléphone : ${formData.telephone || "Non renseigné"}`,
-        `Format souhaité : ${formData.format || "À préciser"}`,
-        "",
-        "Message :",
-        formData.message,
-      ].join("\n")
-    );
-
-    return `mailto:connexion@glenn.bzh?subject=${subject}&body=${body}`;
-  }, [formData]);
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (field: keyof typeof formData, value: string) => {
     setFormData((current) => ({ ...current, [field]: value }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const nom = formData.nom.trim();
@@ -205,7 +189,39 @@ const AteliersDuFutur = () => {
       return;
     }
 
-    window.location.href = contactHref;
+    setIsSending(true);
+    try {
+      const { error } = await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "ateliers-contact",
+          idempotencyKey: `ateliers-${email}-${Date.now()}`,
+          templateData: {
+            nom,
+            entreprise,
+            email,
+            telephone: formData.telephone.trim(),
+            format: formData.format,
+            message,
+          },
+        },
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message envoyé",
+        description: "Votre message a bien été envoyé, nous vous répondrons dans un futur très proche.",
+      });
+      setFormData({ nom: "", entreprise: "", email: "", telephone: "", format: "", message: "" });
+    } catch (err) {
+      console.error("Email send failed", err);
+      toast({
+        title: "Envoi impossible",
+        description: "Une erreur est survenue. Merci de réessayer dans quelques instants.",
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -615,12 +631,12 @@ const AteliersDuFutur = () => {
                   />
                 </div>
 
-                <Button type="submit" variant="hero" size="xl" className="w-full group">
-                  Demander un devis
+                <Button type="submit" variant="hero" size="xl" className="w-full group" disabled={isSending}>
+                  {isSending ? "Envoi en cours…" : "Demander un devis"}
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  En cliquant, votre demande s'ouvre dans votre messagerie avec les informations déjà préremplies pour un envoi rapide.
+                  Votre message nous parviendra directement. Nous vous répondons sous quelques jours.
                 </p>
               </form>
             </div>

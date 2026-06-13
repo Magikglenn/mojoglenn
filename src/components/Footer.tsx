@@ -1,5 +1,5 @@
 import { Linkedin, Instagram, Phone, Mail, ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const socialLinks = [
   {
@@ -15,19 +15,29 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleTopClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    navigate("/");
+  };
+
   return (
     <footer className="py-20 bg-card border-t border-border">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 items-start mb-16">
-          {/* Brand */}
           <div className="md:col-span-2">
             <a
               href="#"
               className="text-4xl font-display font-bold text-foreground hover:text-accent transition-colors tracking-tight inline-block mb-6"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
+              onClick={handleTopClick}
             >
               Glenn<span className="text-accent">.</span>
             </a>
@@ -36,7 +46,6 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="font-display font-bold text-sm uppercase tracking-[0.2em] mb-6">Contact</h4>
             <div className="space-y-4">
@@ -59,7 +68,6 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Social */}
           <div>
             <h4 className="font-display font-bold text-sm uppercase tracking-[0.2em] mb-6">Suivez-moi</h4>
             <div className="flex gap-4">
@@ -79,10 +87,12 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="pt-10 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-muted-foreground text-sm">
           <p>© {new Date().getFullYear()} Glenn Le Bourhis. Tous droits réservés.</p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 flex-wrap justify-center">
+            <Link to="/ateliers-du-futur" className="hover:text-accent transition-colors">
+              Les Ateliers du Futur
+            </Link>
             <Link to="/a-propos" className="hover:text-accent transition-colors">
               À propos
             </Link>

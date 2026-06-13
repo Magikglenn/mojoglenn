@@ -212,12 +212,8 @@ const Conferences = () => {
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-center">
               <div className="relative">
-                <div className="aspect-[3/4] max-w-sm mx-auto overflow-hidden rounded-lg border border-border/60 shadow-elevated bg-background flex items-center justify-center">
-                  <div className="text-center p-8 text-muted-foreground">
-                    <BookOpen className="w-12 h-12 mx-auto mb-4 text-accent" />
-                    <p className="text-sm uppercase tracking-[0.2em] font-semibold mb-2">Emplacement couverture</p>
-                    <p className="text-sm">Couverture du livre à remplacer</p>
-                  </div>
+                <div className="aspect-[3/4] max-w-sm mx-auto overflow-hidden rounded-lg">
+                  <img src={bullshitCover.url} alt="Couverture du livre Bullshit Marketing de Glenn Le Bourhis" className="w-full h-full object-cover" />
                 </div>
               </div>
 

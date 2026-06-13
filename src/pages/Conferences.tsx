@@ -272,13 +272,16 @@ const Conferences = () => {
                     key={conf.id}
                     className="bg-card border border-border/60 rounded-lg p-8 lg:p-10 shadow-card flex flex-col card-hover"
                   >
-                    <div className="flex items-center gap-4 mb-6">
+                    <div className="flex items-center gap-4 mb-5">
                       <div className="w-12 h-12 rounded-lg bg-accent/15 flex items-center justify-center shrink-0">
                         <Icon className="w-5 h-5 text-accent" />
                       </div>
-                      <p className="text-accent font-semibold text-sm uppercase tracking-[0.2em]">{conf.tag}</p>
+                      <p className="text-muted-foreground font-semibold text-xs uppercase tracking-[0.25em]">Conférence · 1h</p>
                     </div>
-                    <h3 className="font-display text-2xl md:text-3xl font-bold mb-5 tracking-tight">{conf.title}</h3>
+                    <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight leading-[0.95] uppercase">
+                      <span className="highlight-box">{conf.tag}</span>
+                    </h3>
+                    <p className="font-display text-xl md:text-2xl font-semibold mb-5 tracking-tight text-foreground">{conf.title}</p>
                     <p className="text-muted-foreground leading-relaxed mb-6">{conf.pitch}</p>
 
                     <ul className="space-y-2 text-sm text-muted-foreground mb-8">

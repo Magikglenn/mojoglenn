@@ -20,6 +20,7 @@ const navItems: NavItem[] = [
     items: [
       { label: "Ateliers du Futur", href: "/ateliers-du-futur" },
       { label: "Conférences", href: "/conferences" },
+      { label: "Consulting", href: "/#services" },
     ],
   },
   { label: "FAQ", href: "#faq", type: "anchor" },

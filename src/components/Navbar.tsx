@@ -1,18 +1,27 @@
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import mojoLogo from "@/assets/mojo-logo.svg";
 import mojoVoodoo from "@/assets/mojo-voodoo.svg";
 
-type NavItem = { label: string; href: string; type: "anchor" | "route" };
+type SubItem = { label: string; href: string };
+type NavItem =
+  | { label: string; href: string; type: "anchor" | "route" }
+  | { label: string; type: "dropdown"; items: SubItem[] };
 
 const navItems: NavItem[] = [
   { label: "Services", href: "#services", type: "anchor" },
-  { label: "Ateliers du Futur", href: "/ateliers-du-futur", type: "route" },
   { label: "À propos", href: "/a-propos", type: "route" },
   { label: "Témoignages", href: "#testimonials", type: "anchor" },
-  { label: "Offres", href: "#offers", type: "anchor" },
+  {
+    label: "Offres",
+    type: "dropdown",
+    items: [
+      { label: "Ateliers du Futur", href: "/ateliers-du-futur" },
+      { label: "Conférences", href: "/conferences" },
+    ],
+  },
   { label: "FAQ", href: "#faq", type: "anchor" },
 ];
 

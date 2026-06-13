@@ -21,6 +21,7 @@ const navItems: NavItem[] = [
       { label: "Ateliers du Futur", href: "/ateliers-du-futur" },
       { label: "Conférences", href: "/conferences" },
       { label: "Consulting", href: "/#services" },
+      { label: "Neuromarketing Rennes", href: "/neuromarketing-rennes" },
     ],
   },
   { label: "FAQ", href: "#faq", type: "anchor" },

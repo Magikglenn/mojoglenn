@@ -85,8 +85,9 @@ const MentionsLegales = () => {
               Les informations contenues sur ce site sont aussi précises que possible et le site est périodiquement remis à jour, mais peut toutefois contenir des inexactitudes, des omissions ou des lacunes.
             </p>
           </section>
-        </div>
       </div>
+      <Footer />
+    </div>
     </div>
   );
 };

@@ -131,6 +131,7 @@ const APropos = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 const MentionsLegales = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-6 py-16">
+      <Navbar />
+      <div className="container mx-auto px-6 pt-32 pb-16">
         <Button variant="ghost" asChild className="mb-8">
           <Link to="/" className="flex items-center gap-2">
             <ArrowLeft className="w-4 h-4" />

@@ -32,7 +32,7 @@ export const Footer = () => {
   return (
     <footer className="py-20 bg-card border-t border-border">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 items-start mb-16">
+        <div className="grid md:grid-cols-5 gap-12 items-start mb-16">
           <div className="md:col-span-2">
             <a
               href="#"
@@ -69,6 +69,27 @@ export const Footer = () => {
           </div>
 
           <div>
+            <h4 className="font-display font-bold text-sm uppercase tracking-[0.2em] mb-6">Pages</h4>
+            <div className="space-y-3">
+              <Link to="/a-propos" className="block text-muted-foreground hover:text-accent transition-colors">
+                À propos
+              </Link>
+              <Link to="/conferences" className="block text-muted-foreground hover:text-accent transition-colors">
+                Conférences
+              </Link>
+              <Link
+                to="/neuromarketing-rennes"
+                className="block text-muted-foreground hover:text-accent transition-colors"
+              >
+                Neuromarketing Rennes
+              </Link>
+              <Link to="/ateliers-du-futur" className="block text-muted-foreground hover:text-accent transition-colors">
+                Les Ateliers du Futur
+              </Link>
+            </div>
+          </div>
+
+          <div>
             <h4 className="font-display font-bold text-sm uppercase tracking-[0.2em] mb-6">Suivez-moi</h4>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -88,18 +109,11 @@ export const Footer = () => {
         </div>
 
         <div className="pt-10 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-muted-foreground text-sm">
-          <p>© {new Date().getFullYear()} Glenn Le Bourhis. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Glenn Le Bourhis. Tous droits réservés. — Rennes, Bretagne, France</p>
           <div className="flex items-center gap-6 flex-wrap justify-center">
-            <Link to="/ateliers-du-futur" className="hover:text-accent transition-colors">
-              Les Ateliers du Futur
-            </Link>
-            <Link to="/a-propos" className="hover:text-accent transition-colors">
-              À propos
-            </Link>
             <Link to="/mentions-legales" className="hover:text-accent transition-colors">
               Mentions légales
             </Link>
-            <p>Bretagne, France</p>
           </div>
         </div>
       </div>

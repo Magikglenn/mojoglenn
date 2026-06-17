@@ -8,13 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import bullshitCover from "@/assets/bullshit-couv-levitation.png.asset.json";
@@ -151,7 +145,7 @@ const Conferences = () => {
           name="description"
           content="Glenn Le Bourhis, auteur de Bullshit Marketing, donne deux conférences d'1 heure pour démonter les idées reçues du marketing : Storytelling et Neuromarketing."
         />
-        <link rel="canonical" href="https://mojoglenn.lovable.app/conferences" />
+        <link rel="canonical" href="https://glenn.bzh/conferences" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -176,10 +170,13 @@ const Conferences = () => {
               </h1>
               <div className="space-y-5 text-lg text-muted-foreground leading-relaxed max-w-2xl">
                 <p>
-                  Consultant en stratégie de communication depuis <strong className="text-foreground">25 ans</strong>, spécialiste du <strong className="text-foreground">neuromarketing</strong>, formateur et conférencier.
+                  Consultant en stratégie de communication depuis <strong className="text-foreground">25 ans</strong>,
+                  spécialiste du <strong className="text-foreground">neuromarketing</strong>, formateur et conférencier.
                 </p>
                 <p>
-                  Auteur de <strong className="text-foreground">Bullshit Marketing</strong>, un essai qui démonte les mythes et légendes urbaines du marketing — cerveau reptilien, pyramide de Maslow, citations apocryphes de Simon Sinek, et bien d'autres idées reçues que tout le monde répète sans jamais les vérifier.
+                  Auteur de <strong className="text-foreground">Bullshit Marketing</strong>, un essai qui démonte les
+                  mythes et légendes urbaines du marketing — cerveau reptilien, pyramide de Maslow, citations apocryphes
+                  de Simon Sinek, et bien d'autres idées reçues que tout le monde répète sans jamais les vérifier.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 mt-10">
@@ -195,7 +192,11 @@ const Conferences = () => {
 
             <div className="relative">
               <div className="aspect-[4/5] overflow-hidden rounded-lg border border-border/60 shadow-elevated bg-card">
-                <img src={glennPortrait.url} alt="Glenn Le Bourhis, conférencier" className="w-full h-full object-cover" />
+                <img
+                  src={glennPortrait.url}
+                  alt="Glenn Le Bourhis, conférencier"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute -bottom-5 -left-5 bg-card border border-border/60 rounded-lg px-5 py-4 shadow-card max-w-xs">
                 <p className="text-sm uppercase tracking-[0.2em] text-accent font-semibold mb-2">Présentiel · 1h</p>
@@ -213,7 +214,11 @@ const Conferences = () => {
             <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-center">
               <div className="relative">
                 <div className="aspect-[3/4] max-w-sm mx-auto overflow-hidden rounded-lg">
-                  <img src={bullshitCover.url} alt="Couverture du livre Bullshit Marketing de Glenn Le Bourhis" className="w-full h-full object-cover" />
+                  <img
+                    src={bullshitCover.url}
+                    alt="Couverture du livre Bullshit Marketing de Glenn Le Bourhis"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
@@ -229,10 +234,15 @@ const Conferences = () => {
                 </p>
                 <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Et si la moitié de ce qu'on vous a enseigné sur le marketing était faux&nbsp;? Pyramide de Maslow, cerveau reptilien, citations de Simon Sinek, les fameux 95&nbsp;% de décisions irrationnelles… Glenn a utilisé tous ces outils, les a enseignés, y a cru. Puis il a creusé.
+                    Et si la moitié de ce qu'on vous a enseigné sur le marketing était faux&nbsp;? Pyramide de Maslow,
+                    cerveau reptilien, citations de Simon Sinek, les fameux 95&nbsp;% de décisions irrationnelles… Glenn
+                    a utilisé tous ces outils, les a enseignés, y a cru. Puis il a creusé.
                   </p>
                   <p>
-                    <strong className="text-foreground">Bullshit Marketing</strong> est le résultat de cette enquête : un décryptage documenté — et plein d'humour — de tout ce qu'on raconte dans le marketing, et qui ne tient pas vraiment la route. Mais ce n'est pas un livre cynique. Au milieu du tri, certaines vérités résistent&nbsp;: le storytelling, la confiance, l'écoute profonde.
+                    <strong className="text-foreground">Bullshit Marketing</strong> est le résultat de cette enquête :
+                    un décryptage documenté — et plein d'humour — de tout ce qu'on raconte dans le marketing, et qui ne
+                    tient pas vraiment la route. Mais ce n'est pas un livre cynique. Au milieu du tri, certaines vérités
+                    résistent&nbsp;: le storytelling, la confiance, l'écoute profonde.
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3 mt-8">
@@ -260,7 +270,8 @@ const Conferences = () => {
                 2 conférences, 1 heure, pour bousculer vos certitudes
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Deux formats courts, denses et vivants, pensés pour vos séminaires, vos équipes marketing ou un grand public curieux.
+                Deux formats courts, denses et vivants, pensés pour vos séminaires, vos équipes marketing ou un grand
+                public curieux.
               </p>
             </div>
 
@@ -276,32 +287,38 @@ const Conferences = () => {
                       <div className="w-12 h-12 rounded-lg bg-accent/15 flex items-center justify-center shrink-0">
                         <Icon className="w-5 h-5 text-accent" />
                       </div>
-                      <p className="text-muted-foreground font-semibold text-xs uppercase tracking-[0.25em]">Conférence · 1h</p>
+                      <p className="text-muted-foreground font-semibold text-xs uppercase tracking-[0.25em]">
+                        Conférence · 1h
+                      </p>
                     </div>
                     <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight leading-[0.95] uppercase">
                       <span className="highlight-box">{conf.tag}</span>
                     </h3>
-                    <p className="font-display text-xl md:text-2xl font-semibold mb-5 tracking-tight text-foreground">{conf.title}</p>
+                    <p className="font-display text-xl md:text-2xl font-semibold mb-5 tracking-tight text-foreground">
+                      {conf.title}
+                    </p>
                     <p className="text-muted-foreground leading-relaxed mb-6">{conf.pitch}</p>
 
                     <ul className="space-y-2 text-sm text-muted-foreground mb-8">
                       <li className="flex items-start gap-3">
                         <Users className="w-4 h-4 mt-0.5 text-accent shrink-0" />
-                        <span><strong className="text-foreground">Public :</strong> {conf.audience}</span>
+                        <span>
+                          <strong className="text-foreground">Public :</strong> {conf.audience}
+                        </span>
                       </li>
                       <li className="flex items-start gap-3">
                         <Mic2 className="w-4 h-4 mt-0.5 text-accent shrink-0" />
-                        <span><strong className="text-foreground">Durée :</strong> {conf.duration}</span>
+                        <span>
+                          <strong className="text-foreground">Durée :</strong> {conf.duration}
+                        </span>
                       </li>
                     </ul>
 
                     <div className="border-t border-border/60 pt-6 mt-auto">
-                      <div className="font-display text-3xl md:text-4xl font-bold mb-5 tracking-tight">{conf.price}</div>
-                      <Button
-                        variant="hero"
-                        className="w-full group"
-                        onClick={() => scrollToForm(conf.tag)}
-                      >
+                      <div className="font-display text-3xl md:text-4xl font-bold mb-5 tracking-tight">
+                        {conf.price}
+                      </div>
+                      <Button variant="hero" className="w-full group" onClick={() => scrollToForm(conf.tag)}>
                         Réserver cette conférence
                         <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                       </Button>
@@ -317,9 +334,7 @@ const Conferences = () => {
         <section className="py-24 lg:py-32 bg-card">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mb-14">
-              <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
-                Sur scène
-              </span>
+              <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">Sur scène</span>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
                 Ils l'ont déjà vu en action
               </h2>
@@ -331,7 +346,11 @@ const Conferences = () => {
             <div className="grid md:grid-cols-1 gap-5 max-w-4xl">
               <figure className="bg-background border border-border/60 rounded-lg overflow-hidden shadow-card">
                 <div className="aspect-[16/9] overflow-hidden">
-                  <img src={glennConference.url} alt="Glenn Le Bourhis en conférence au Forum ISCOM" className="w-full h-full object-cover" />
+                  <img
+                    src={glennConference.url}
+                    alt="Glenn Le Bourhis en conférence au Forum ISCOM"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <figcaption className="px-4 py-3 text-sm text-muted-foreground">
                   Glenn en conférence — Forum ISCOM.
@@ -346,28 +365,37 @@ const Conferences = () => {
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-start">
               <div>
-                <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
-                  Contact
-                </span>
+                <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">Contact</span>
                 <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
                   Envie d'organiser une conférence&nbsp;?
                 </h2>
                 <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Une conférence <strong className="text-foreground">STORYTELLING</strong>, <strong className="text-foreground">NEUROMARKETING</strong>, ou une autre idée en tête&nbsp;? Dites-moi tout, je vous réponds rapidement.
+                    Une conférence <strong className="text-foreground">STORYTELLING</strong>,{" "}
+                    <strong className="text-foreground">NEUROMARKETING</strong>, ou une autre idée en tête&nbsp;?
+                    Dites-moi tout, je vous réponds rapidement.
                   </p>
                   <div className="space-y-4 text-sm">
-                    <a href="mailto:connexion@glenn.bzh" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors">
+                    <a
+                      href="mailto:connexion@glenn.bzh"
+                      className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors"
+                    >
                       <Mail className="w-4 h-4" /> connexion@glenn.bzh
                     </a>
-                    <a href="tel:0681499840" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors">
+                    <a
+                      href="tel:0681499840"
+                      className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors"
+                    >
                       <Phone className="w-4 h-4" /> 06 81 49 98 40
                     </a>
                   </div>
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="bg-card border border-border/60 rounded-lg p-6 md:p-8 shadow-card space-y-6">
+              <form
+                onSubmit={handleSubmit}
+                className="bg-card border border-border/60 rounded-lg p-6 md:p-8 shadow-card space-y-6"
+              >
                 <div className="grid md:grid-cols-2 gap-5">
                   <div className="space-y-2">
                     <Label htmlFor="nom">Nom *</Label>

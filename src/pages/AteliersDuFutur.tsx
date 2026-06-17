@@ -1,20 +1,29 @@
 import { useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, ArrowRight, Briefcase, Building2, Globe2, Lightbulb, Mail, Phone, Rocket, ShieldAlert, Sparkles, Trees, Users, Cpu } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Briefcase,
+  Building2,
+  Globe2,
+  Lightbulb,
+  Mail,
+  Phone,
+  Rocket,
+  ShieldAlert,
+  Sparkles,
+  Trees,
+  Users,
+  Cpu,
+} from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import heroPhoto from "@/assets/ateliers-hero-payer-publier.png.asset.json";
@@ -28,31 +37,36 @@ import collageCartes from "@/assets/ateliers-collage-cartes.png.asset.json";
 const categories = [
   {
     title: "Politique",
-    description: "Les décisions publiques, les régulations, les arbitrages et les nouveaux rapports de force qui redessinent votre terrain de jeu.",
+    description:
+      "Les décisions publiques, les régulations, les arbitrages et les nouveaux rapports de force qui redessinent votre terrain de jeu.",
     icon: ShieldAlert,
     tagClass: "tag-rose",
   },
   {
     title: "Économie",
-    description: "Les modèles de valeur, les transformations de marché et les tensions qui changent la manière d'acheter, de produire et de décider.",
+    description:
+      "Les modèles de valeur, les transformations de marché et les tensions qui changent la manière d'acheter, de produire et de décider.",
     icon: Briefcase,
     tagClass: "tag-bleu",
   },
   {
     title: "Société",
-    description: "Les comportements, les usages, les attentes culturelles et les nouvelles sensibilités qui influencent vos clients et vos équipes.",
+    description:
+      "Les comportements, les usages, les attentes culturelles et les nouvelles sensibilités qui influencent vos clients et vos équipes.",
     icon: Users,
     tagClass: "tag-violet",
   },
   {
     title: "Planète",
-    description: "Les enjeux climatiques, les ressources, les contraintes environnementales et leurs impacts sur vos activités et vos priorités.",
+    description:
+      "Les enjeux climatiques, les ressources, les contraintes environnementales et leurs impacts sur vos activités et vos priorités.",
     icon: Trees,
     tagClass: "tag-vert",
   },
   {
     title: "Technologie",
-    description: "Les avancées qui accélèrent, automatisent ou déplacent la création de valeur, du pilotage opérationnel aux expériences clients.",
+    description:
+      "Les avancées qui accélèrent, automatisent ou déplacent la création de valeur, du pilotage opérationnel aux expériences clients.",
     icon: Cpu,
     tagClass: "tag-bleu",
   },
@@ -61,22 +75,26 @@ const categories = [
 const benefits = [
   {
     title: "Synergie d'équipe et team building",
-    description: "Créer un moment collectif fort pour faire dialoguer des profils qui travaillent rarement ensemble sur un même terrain d'exploration.",
+    description:
+      "Créer un moment collectif fort pour faire dialoguer des profils qui travaillent rarement ensemble sur un même terrain d'exploration.",
     icon: Users,
   },
   {
     title: "Anticipation de situations de crise",
-    description: "Mettre à plat des scénarios difficiles avant qu'ils n'arrivent et entraîner l'organisation à penser plus vite, plus juste, plus loin.",
+    description:
+      "Mettre à plat des scénarios difficiles avant qu'ils n'arrivent et entraîner l'organisation à penser plus vite, plus juste, plus loin.",
     icon: ShieldAlert,
   },
   {
     title: "Innovation",
-    description: "Ouvrir des pistes nouvelles, questionner les réflexes du présent et transformer l'incertitude en matière première stratégique.",
+    description:
+      "Ouvrir des pistes nouvelles, questionner les réflexes du présent et transformer l'incertitude en matière première stratégique.",
     icon: Rocket,
   },
   {
     title: "Émergence de nouvelles idées",
-    description: "Faire surgir des angles inattendus, des opportunités concrètes et des conversations utiles pour vos prochains projets.",
+    description:
+      "Faire surgir des angles inattendus, des opportunités concrètes et des conversations utiles pour vos prochains projets.",
     icon: Lightbulb,
   },
 ] as const;
@@ -94,12 +112,14 @@ const offers = [
   {
     title: "Format demi-journée",
     price: "À partir de 990 € HT",
-    description: "Une immersion dense pour ouvrir la réflexion, aligner un collectif et faire émerger des premières pistes d'action.",
+    description:
+      "Une immersion dense pour ouvrir la réflexion, aligner un collectif et faire émerger des premières pistes d'action.",
   },
   {
     title: "Format journée complète",
     price: "À partir de 1600 € HT",
-    description: "Un format plus approfondi pour explorer davantage de scénarios, enrichir les échanges et produire des livrables plus structurés.",
+    description:
+      "Un format plus approfondi pour explorer davantage de scénarios, enrichir les échanges et produire des livrables plus structurés.",
   },
 ] as const;
 
@@ -181,7 +201,13 @@ const AteliersDuFutur = () => {
       return;
     }
 
-    if (nom.length > 100 || entreprise.length > 100 || email.length > 255 || formData.telephone.length > 40 || message.length > 1200) {
+    if (
+      nom.length > 100 ||
+      entreprise.length > 100 ||
+      email.length > 255 ||
+      formData.telephone.length > 40 ||
+      message.length > 1200
+    ) {
       toast({
         title: "Informations trop longues",
         description: "Raccourcissez un ou plusieurs champs pour pouvoir envoyer la demande.",
@@ -232,7 +258,7 @@ const AteliersDuFutur = () => {
           name="description"
           content="Les Ateliers du Futur : atelier de prospective pour entreprise, innovation et team building en Bretagne. Scénarios illustrés, intelligence collective et formats sur mesure."
         />
-        <link rel="canonical" href="https://mojoglenn.lovable.app/ateliers-du-futur" />
+        <link rel="canonical" href="https://glenn.bzh/ateliers-du-futur" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -256,10 +282,14 @@ const AteliersDuFutur = () => {
               </h1>
               <div className="space-y-5 text-lg text-muted-foreground leading-relaxed max-w-2xl">
                 <p>
-                  Et si vous preniez un temps pour sortir du court terme&nbsp;? Les Ateliers du Futur sont des ateliers de prospective conçus pour aider les entreprises et leurs équipes à anticiper les futurs possibles, à ouvrir les conversations stratégiques et à faire émerger des idées utiles.
+                  Et si vous preniez un temps pour sortir du court terme&nbsp;? Les Ateliers du Futur sont des ateliers
+                  de prospective conçus pour aider les entreprises et leurs équipes à anticiper les futurs possibles, à
+                  ouvrir les conversations stratégiques et à faire émerger des idées utiles.
                 </p>
                 <p>
-                  Nous les animons à deux voix, <strong className="text-foreground">Glenn Le Bourhis</strong> et <strong className="text-foreground">Aurélien Cunin</strong>, avec un format pensé pour faire dialoguer l'intuition, la méthode et le concret.
+                  Nous les animons à deux voix, <strong className="text-foreground">Glenn Le Bourhis</strong> et{" "}
+                  <strong className="text-foreground">Aurélien Cunin</strong>, avec un format pensé pour faire dialoguer
+                  l'intuition, la méthode et le concret.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 mt-10">
@@ -305,10 +335,19 @@ const AteliersDuFutur = () => {
               </h2>
               <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Un atelier de prospective n'a d'intérêt que s'il rend l'avenir <strong className="text-foreground">discutable</strong>. Nous avons donc construit une expérience simple à prendre en main et riche à explorer, organisée autour de cinq catégories de scénarios : <strong className="text-foreground">Politique</strong>, <strong className="text-foreground">Économie</strong>, <strong className="text-foreground">Société</strong>, <strong className="text-foreground">Planète</strong> et <strong className="text-foreground">Technologie</strong>.
+                  Un atelier de prospective n'a d'intérêt que s'il rend l'avenir{" "}
+                  <strong className="text-foreground">discutable</strong>. Nous avons donc construit une expérience
+                  simple à prendre en main et riche à explorer, organisée autour de cinq catégories de scénarios :{" "}
+                  <strong className="text-foreground">Politique</strong>,{" "}
+                  <strong className="text-foreground">Économie</strong>,{" "}
+                  <strong className="text-foreground">Société</strong>,{" "}
+                  <strong className="text-foreground">Planète</strong> et{" "}
+                  <strong className="text-foreground">Technologie</strong>.
                 </p>
                 <p>
-                  À ce jour, plus de <strong className="text-foreground">30 scénarios</strong> ont été créés, et de nouveaux s'ajoutent chaque saison pour garder le jeu vivant, stimulant et connecté aux transformations du monde.
+                  À ce jour, plus de <strong className="text-foreground">30 scénarios</strong> ont été créés, et de
+                  nouveaux s'ajoutent chaque saison pour garder le jeu vivant, stimulant et connecté aux transformations
+                  du monde.
                 </p>
               </div>
             </div>
@@ -317,16 +356,17 @@ const AteliersDuFutur = () => {
               {categories.map((category) => {
                 const Icon = category.icon;
                 return (
-                  <article key={category.title} className="bg-background border border-border/60 rounded-lg p-6 card-hover min-h-[240px] flex flex-col">
+                  <article
+                    key={category.title}
+                    className="bg-background border border-border/60 rounded-lg p-6 card-hover min-h-[240px] flex flex-col"
+                  >
                     <div className="flex items-center justify-between mb-5 gap-4">
                       <span className={category.tagClass}>{category.title}</span>
                       <div className="w-11 h-11 rounded-lg bg-muted/60 flex items-center justify-center shrink-0">
                         <Icon className="w-5 h-5 text-foreground" />
                       </div>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed text-sm">
-                      {category.description}
-                    </p>
+                    <p className="text-muted-foreground leading-relaxed text-sm">{category.description}</p>
                   </article>
                 );
               })}
@@ -346,10 +386,13 @@ const AteliersDuFutur = () => {
                 </h2>
                 <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    C'est souvent là que tout change. Au lieu de parler de tendances de manière abstraite, les participants manipulent de véritables cartes illustrées. Elles donnent de la matière à la discussion, rendent les hypothèses tangibles et facilitent l'appropriation des scénarios.
+                    C'est souvent là que tout change. Au lieu de parler de tendances de manière abstraite, les
+                    participants manipulent de véritables cartes illustrées. Elles donnent de la matière à la
+                    discussion, rendent les hypothèses tangibles et facilitent l'appropriation des scénarios.
                   </p>
                   <p>
-                    Chaque carte a été pensée spécifiquement pour l'atelier. Elles apportent une dimension visuelle forte, mémorable et immédiatement exploitable dans les échanges.
+                    Chaque carte a été pensée spécifiquement pour l'atelier. Elles apportent une dimension visuelle
+                    forte, mémorable et immédiatement exploitable dans les échanges.
                   </p>
                 </div>
               </div>
@@ -361,16 +404,9 @@ const AteliersDuFutur = () => {
                     className={`bg-card border border-border/60 rounded-lg overflow-hidden shadow-card ${image.className}`}
                   >
                     <div className="aspect-[4/3] bg-muted/30">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
+                      <img src={image.src} alt={image.alt} className="w-full h-full object-cover" loading="lazy" />
                     </div>
-                    <figcaption className="px-4 py-3 text-sm text-muted-foreground">
-                      {image.caption}
-                    </figcaption>
+                    <figcaption className="px-4 py-3 text-sm text-muted-foreground">{image.caption}</figcaption>
                   </figure>
                 ))}
               </div>
@@ -388,43 +424,63 @@ const AteliersDuFutur = () => {
                 Deux expertises, une même envie&nbsp;: faire réfléchir sans jamais décrocher du réel
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Avant de parler d'offre, parlons d'intention. Nous avons conçu ces ateliers pour les organisations qui veulent prendre de l'avance sans tomber dans le gadget, et pour les équipes qui ont besoin d'un cadre stimulant pour imaginer l'après.
+                Avant de parler d'offre, parlons d'intention. Nous avons conçu ces ateliers pour les organisations qui
+                veulent prendre de l'avance sans tomber dans le gadget, et pour les équipes qui ont besoin d'un cadre
+                stimulant pour imaginer l'après.
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 mb-10">
               <article className="bg-background border border-border/60 rounded-lg p-8 shadow-card">
                 <p className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-4">Glenn Le Bourhis</p>
-                <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">Neuromarketing, narration et mise en mouvement</h3>
+                <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
+                  Neuromarketing, narration et mise en mouvement
+                </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Spécialiste du <strong className="text-foreground">neuromarketing</strong>, conférencier, avec <strong className="text-foreground">25 ans d'expérience en agence de communication</strong>, Glenn apporte à l'atelier sa capacité à faire dialoguer stratégie, désir, attention et récit.
+                  Spécialiste du <strong className="text-foreground">neuromarketing</strong>, conférencier, avec{" "}
+                  <strong className="text-foreground">25 ans d'expérience en agence de communication</strong>, Glenn
+                  apporte à l'atelier sa capacité à faire dialoguer stratégie, désir, attention et récit.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Il est aussi l'auteur du livre <strong className="text-foreground">"Bullshit Marketing"</strong>, et anime des formats qui savent rester exigeants tout en restant vivants.
+                  Il est aussi l'auteur du livre <strong className="text-foreground">"Bullshit Marketing"</strong>, et
+                  anime des formats qui savent rester exigeants tout en restant vivants.
                 </p>
               </article>
 
               <article className="bg-background border border-border/60 rounded-lg p-8 shadow-card">
                 <p className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-4">Aurélien Cunin</p>
-                <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">Pilotage de projets et transition en entreprise</h3>
+                <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
+                  Pilotage de projets et transition en entreprise
+                </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Aurélien Cunin est spécialiste du <strong className="text-foreground">pilotage de projets</strong> et de la <strong className="text-foreground">transition en entreprise</strong>. Il apporte la rigueur de structuration, l'animation de groupe et la capacité à transformer une idée en chemin d'action.
+                  Aurélien Cunin est spécialiste du <strong className="text-foreground">pilotage de projets</strong> et
+                  de la <strong className="text-foreground">transition en entreprise</strong>. Il apporte la rigueur de
+                  structuration, l'animation de groupe et la capacité à transformer une idée en chemin d'action.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Son regard ancre les scénarios dans les réalités d'organisation, les arbitrages concrets et les enjeux de mise en œuvre.
+                  Son regard ancre les scénarios dans les réalités d'organisation, les arbitrages concrets et les enjeux
+                  de mise en œuvre.
                 </p>
               </article>
             </div>
 
             <div className="bg-background border border-border/60 rounded-lg p-8 lg:p-10 shadow-card mb-10">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Ensemble, nous avons conçu et animé des <strong className="text-foreground">hackathons et ateliers</strong> pour de grands groupes comme <strong className="text-foreground">Orange</strong>, <strong className="text-foreground">TotalEnergies</strong>, <strong className="text-foreground">Cooperl</strong> et d'autres organisations qui avaient besoin d'embarquer leurs équipes dans des temps de réflexion concrets, engageants et utiles.
+                Ensemble, nous avons conçu et animé des{" "}
+                <strong className="text-foreground">hackathons et ateliers</strong> pour de grands groupes comme{" "}
+                <strong className="text-foreground">Orange</strong>,{" "}
+                <strong className="text-foreground">TotalEnergies</strong>,{" "}
+                <strong className="text-foreground">Cooperl</strong> et d'autres organisations qui avaient besoin
+                d'embarquer leurs équipes dans des temps de réflexion concrets, engageants et utiles.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-5">
               {hackathonGallery.map((image) => (
-                <figure key={image.src} className="bg-background border border-border/60 rounded-lg overflow-hidden shadow-card">
+                <figure
+                  key={image.src}
+                  className="bg-background border border-border/60 rounded-lg overflow-hidden shadow-card"
+                >
                   <div className="aspect-[4/3] bg-muted/30">
                     <img src={image.src} alt={image.alt} className="w-full h-full object-cover" loading="lazy" />
                   </div>
@@ -447,7 +503,9 @@ const AteliersDuFutur = () => {
                 Des bénéfices très concrets pour vos équipes
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Un atelier de prospective n'est pas là pour faire joli dans un séminaire. Il sert à faire avancer une équipe, à ouvrir des pistes, à rendre l'incertitude utile et à remettre du mouvement dans la réflexion collective.
+                Un atelier de prospective n'est pas là pour faire joli dans un séminaire. Il sert à faire avancer une
+                équipe, à ouvrir des pistes, à rendre l'incertitude utile et à remettre du mouvement dans la réflexion
+                collective.
               </p>
             </div>
 
@@ -455,7 +513,10 @@ const AteliersDuFutur = () => {
               {benefits.map((benefit) => {
                 const Icon = benefit.icon;
                 return (
-                  <article key={benefit.title} className="bg-card border border-border/60 rounded-lg p-6 shadow-card card-hover min-h-[240px]">
+                  <article
+                    key={benefit.title}
+                    className="bg-card border border-border/60 rounded-lg p-6 shadow-card card-hover min-h-[240px]"
+                  >
                     <div className="w-12 h-12 rounded-lg bg-accent/15 flex items-center justify-center mb-5">
                       <Icon className="w-5 h-5 text-accent" />
                     </div>
@@ -479,13 +540,18 @@ const AteliersDuFutur = () => {
                   Pour les organisations qui pilotent, décident et transforment
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Vous animez un séminaire&nbsp;? Vous cherchez un format de team building intelligent&nbsp;? Vous avez besoin d'aider une équipe à se projeter, à débloquer des idées ou à réfléchir ensemble autrement&nbsp;? C'est précisément là que l'atelier prend sa place.
+                  Vous animez un séminaire&nbsp;? Vous cherchez un format de team building intelligent&nbsp;? Vous avez
+                  besoin d'aider une équipe à se projeter, à débloquer des idées ou à réfléchir ensemble
+                  autrement&nbsp;? C'est précisément là que l'atelier prend sa place.
                 </p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 {audiences.map((audience) => (
-                  <div key={audience} className="bg-background border border-border/60 rounded-lg p-5 flex items-start gap-3 shadow-card">
+                  <div
+                    key={audience}
+                    className="bg-background border border-border/60 rounded-lg p-5 flex items-start gap-3 shadow-card"
+                  >
                     <Building2 className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                     <p className="text-muted-foreground leading-relaxed">{audience}</p>
                   </div>
@@ -498,14 +564,14 @@ const AteliersDuFutur = () => {
         <section className="py-24 lg:py-32">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mb-14">
-              <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">
-                L'offre
-              </span>
+              <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-6 block">L'offre</span>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
                 Deux formats, un cadre adaptable à vos objectifs
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Les ateliers sont proposés <strong className="text-foreground">en présentiel</strong>. Le contenu, le rythme et les scénarios mobilisés peuvent s'adapter au niveau de maturité de votre équipe, à votre contexte et aux objectifs de l'entreprise.
+                Les ateliers sont proposés <strong className="text-foreground">en présentiel</strong>. Le contenu, le
+                rythme et les scénarios mobilisés peuvent s'adapter au niveau de maturité de votre équipe, à votre
+                contexte et aux objectifs de l'entreprise.
               </p>
             </div>
 
@@ -519,8 +585,14 @@ const AteliersDuFutur = () => {
                   <div className="font-display text-4xl md:text-5xl font-bold mb-5 tracking-tight">{offer.price}</div>
                   <p className="text-muted-foreground leading-relaxed mb-6">{offer.description}</p>
                   <ul className="space-y-3 text-muted-foreground text-sm">
-                    <li className="flex items-start gap-3"><Globe2 className="w-4 h-4 mt-0.5 text-accent shrink-0" />Animation en présentiel dans votre entreprise ou sur votre lieu de séminaire</li>
-                    <li className="flex items-start gap-3"><Sparkles className="w-4 h-4 mt-0.5 text-accent shrink-0" />Contenu modulable selon votre besoin : acculturation, cohésion, innovation, projection stratégique</li>
+                    <li className="flex items-start gap-3">
+                      <Globe2 className="w-4 h-4 mt-0.5 text-accent shrink-0" />
+                      Animation en présentiel dans votre entreprise ou sur votre lieu de séminaire
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Sparkles className="w-4 h-4 mt-0.5 text-accent shrink-0" />
+                      Contenu modulable selon votre besoin : acculturation, cohésion, innovation, projection stratégique
+                    </li>
                   </ul>
                 </article>
               ))}
@@ -540,20 +612,30 @@ const AteliersDuFutur = () => {
                 </h2>
                 <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Vous avez déjà une idée du format, ou simplement une intuition à explorer&nbsp;? Racontez-nous votre contexte. Nous reviendrons vers vous avec une proposition adaptée.
+                    Vous avez déjà une idée du format, ou simplement une intuition à explorer&nbsp;? Racontez-nous votre
+                    contexte. Nous reviendrons vers vous avec une proposition adaptée.
                   </p>
                   <div className="space-y-4 text-sm">
-                    <a href="mailto:connexion@glenn.bzh" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors">
+                    <a
+                      href="mailto:connexion@glenn.bzh"
+                      className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors"
+                    >
                       <Mail className="w-4 h-4" /> connexion@glenn.bzh
                     </a>
-                    <a href="tel:0681499840" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors">
+                    <a
+                      href="tel:0681499840"
+                      className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors"
+                    >
                       <Phone className="w-4 h-4" /> 06 81 49 98 40
                     </a>
                   </div>
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="bg-background border border-border/60 rounded-lg p-6 md:p-8 shadow-card space-y-6">
+              <form
+                onSubmit={handleSubmit}
+                className="bg-background border border-border/60 rounded-lg p-6 md:p-8 shadow-card space-y-6"
+              >
                 <div className="grid md:grid-cols-2 gap-5">
                   <div className="space-y-2">
                     <Label htmlFor="nom">Nom *</Label>

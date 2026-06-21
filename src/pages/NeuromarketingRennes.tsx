@@ -84,10 +84,10 @@ const NeuromarketingRennes = () => {
   return (
     <>
       <Helmet>
-        <title>Spécialiste neuromarketing Rennes — Conférences & formations | Glenn</title>
+        <title>Glenn Le Bourhis expert Neuromarketing — Rennes, Bretagne &amp; France</title>
         <meta
           name="description"
-          content="Spécialiste neuromarketing à Rennes : conférences, ateliers, formations et consulting pour comprendre le cerveau de vos clients et vendre plus, sans bullshit."
+          content="Glenn Le Bourhis, expert en neuromarketing à Rennes. Conférences, ateliers, formations et consulting pour comprendre le cerveau de vos clients et améliorer votre communication."
         />
         <link rel="canonical" href="https://glenn.bzh/neuromarketing-rennes" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

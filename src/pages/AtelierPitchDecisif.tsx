@@ -173,16 +173,16 @@ const AtelierPitchDecisif = () => {
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
-              <div className="grid gap-4">
+              <div className="relative w-full aspect-square md:aspect-[5/4]">
                 <img
                   src={atelierPhoto.url}
                   alt="Atelier pitch décisif à Rennes — duo neuromarketing et éloquence"
-                  className="rounded-2xl w-full aspect-video object-cover shadow-xl"
+                  className="absolute top-0 left-0 w-[75%] aspect-video object-cover rounded-2xl shadow-2xl rotate-[-3deg] z-10"
                 />
                 <img
                   src={glennJeanPitch2.url}
                   alt="Glenn Le Bourhis et Jean Fresneau pendant l'atelier pitch"
-                  className="rounded-2xl w-full aspect-video object-cover shadow-xl"
+                  className="absolute bottom-0 right-0 w-[70%] aspect-[4/3] object-cover rounded-2xl shadow-2xl rotate-[4deg] z-20 border-4 border-background"
                 />
               </div>
             </div>

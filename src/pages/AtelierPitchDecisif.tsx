@@ -172,6 +172,19 @@ const AtelierPitchDecisif = () => {
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
+              <img
+                src={atelierPhoto.url}
+                alt="Atelier pitch décisif à Rennes — duo neuromarketing et éloquence"
+                className="rounded-2xl w-full aspect-video object-cover shadow-xl"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* PROBLÈME */}
+        <section className="py-20 bg-card/40">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
               <div className="aspect-video rounded-2xl overflow-hidden bg-muted shadow-xl">
                 <iframe
                   src="https://www.youtube.com/embed/8ke_PvJ37T4"
@@ -181,19 +194,6 @@ const AtelierPitchDecisif = () => {
                   className="w-full h-full"
                 />
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* PROBLÈME */}
-        <section className="py-20 bg-card/40">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-              <img
-                src={atelierPhoto.url}
-                alt="Participant prenant des notes lors de l'atelier pitch décisif à Rennes"
-                className="rounded-2xl w-full aspect-[4/3] object-cover"
-              />
               <div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
                   Votre pitch ne convainc personne. Et ce n'est pas votre faute.

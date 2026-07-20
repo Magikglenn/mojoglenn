@@ -59,6 +59,9 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      // Only close on outside-click for the desktop dropdown; the mobile menu
+      // manages its own open/close state and shouldn't be affected here.
+      if (isMobileMenuOpen) return;
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setOpenDropdown(null);
         setOpenSubmenu(null);
@@ -66,7 +69,8 @@ export const Navbar = () => {
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [isMobileMenuOpen]);
+
 
   const scrollToSection = (href: string) => {
     if (location.pathname !== "/") {

@@ -10,6 +10,8 @@ import AteliersDuFutur from "./pages/AteliersDuFutur";
 import Unsubscribe from "./pages/Unsubscribe";
 import Conferences from "./pages/Conferences";
 import NeuromarketingRennes from "./pages/NeuromarketingRennes";
+import AteliersIndex from "./pages/AteliersIndex";
+import AtelierPitchDecisif from "./pages/AtelierPitchDecisif";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

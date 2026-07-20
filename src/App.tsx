@@ -10,6 +10,8 @@ import AteliersDuFutur from "./pages/AteliersDuFutur";
 import Unsubscribe from "./pages/Unsubscribe";
 import Conferences from "./pages/Conferences";
 import NeuromarketingRennes from "./pages/NeuromarketingRennes";
+import AteliersIndex from "./pages/AteliersIndex";
+import AtelierPitchDecisif from "./pages/AtelierPitchDecisif";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +31,8 @@ const App = () => (
           <Route path="/unsubscribe" element={<Unsubscribe />} />
           <Route path="/conferences" element={<Conferences />} />
           <Route path="/neuromarketing-rennes" element={<NeuromarketingRennes />} />
+          <Route path="/offres/ateliers" element={<AteliersIndex />} />
+          <Route path="/offres/ateliers/pitch-decisif" element={<AtelierPitchDecisif />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

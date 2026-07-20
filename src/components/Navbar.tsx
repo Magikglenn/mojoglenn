@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import mojoLogo from "@/assets/mojo-logo.svg";
 import mojoVoodoo from "@/assets/mojo-voodoo.svg";
 
-type SubItem = { label: string; href: string };
+type SubItem = { label: string; href?: string; children?: SubItem[] };
 type NavItem =
   | { label: string; href: string; type: "anchor" | "route" }
   | { label: string; type: "dropdown"; items: SubItem[] };
@@ -18,7 +18,13 @@ const navItems: NavItem[] = [
     label: "Offres",
     type: "dropdown",
     items: [
-      { label: "Ateliers du Futur", href: "/ateliers-du-futur" },
+      {
+        label: "Ateliers",
+        children: [
+          { label: "Ateliers du Futur", href: "/ateliers-du-futur" },
+          { label: "Pitch Décisif", href: "/offres/ateliers/pitch-decisif" },
+        ],
+      },
       { label: "Conférences", href: "/conferences" },
       { label: "Consulting", href: "/#offers" },
       { label: "Neuromarketing Rennes", href: "/neuromarketing-rennes" },
@@ -39,14 +45,14 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const [mobileOpenGroups, setMobileOpenGroups] = useState<Record<string, boolean>>({});
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -55,6 +61,7 @@ export const Navbar = () => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setOpenDropdown(null);
+        setOpenSubmenu(null);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -67,24 +74,71 @@ export const Navbar = () => {
       setIsMobileMenuOpen(false);
       return;
     }
-
     const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
 
   const handleLogoClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     setIsMobileMenuOpen(false);
-
     if (location.pathname === "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
-
     navigate("/");
+  };
+
+  const closeAll = () => {
+    setOpenDropdown(null);
+    setOpenSubmenu(null);
+    setIsMobileMenuOpen(false);
+  };
+
+  const renderDesktopSubItem = (sub: SubItem, parentKey: string) => {
+    if (sub.children && sub.children.length > 0) {
+      const key = `${parentKey}-${sub.label}`;
+      const isOpen = openSubmenu === key;
+      return (
+        <div
+          key={sub.label}
+          className="relative"
+          onMouseEnter={() => setOpenSubmenu(key)}
+        >
+          <button
+            className="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+            onClick={() => setOpenSubmenu(isOpen ? null : key)}
+          >
+            {sub.label}
+            <ChevronRight size={14} />
+          </button>
+          {isOpen && (
+            <div className="absolute top-0 left-full ml-1 w-56 bg-background border border-border/50 rounded-lg shadow-lg overflow-hidden z-50">
+              {sub.children.map((child) => (
+                <Link
+                  key={child.label}
+                  to={child.href || "#"}
+                  onClick={closeAll}
+                  className="block px-4 py-3 text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                >
+                  {child.label}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      );
+    }
+    return (
+      <Link
+        key={sub.label}
+        to={sub.href || "#"}
+        onClick={closeAll}
+        className="block px-4 py-3 text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+      >
+        {sub.label}
+      </Link>
+    );
   };
 
   const renderNavItem = (item: NavItem) => {
@@ -110,13 +164,15 @@ export const Navbar = () => {
         </button>
       );
     }
-
     if (isDropdown(item)) {
       const isOpen = openDropdown === item.label;
       return (
         <div key={item.label} className="relative" ref={isOpen ? dropdownRef : undefined}>
           <button
-            onClick={() => setOpenDropdown(isOpen ? null : item.label)}
+            onClick={() => {
+              setOpenDropdown(isOpen ? null : item.label);
+              setOpenSubmenu(null);
+            }}
             className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors text-sm font-semibold uppercase tracking-wider"
           >
             {item.label}
@@ -126,18 +182,45 @@ export const Navbar = () => {
             />
           </button>
           {isOpen && (
-            <div className="absolute top-full left-0 mt-2 w-56 bg-background border border-border/50 rounded-lg shadow-lg overflow-hidden z-50">
-              {item.items.map((sub) => (
+            <div className="absolute top-full left-0 mt-2 w-56 bg-background border border-border/50 rounded-lg shadow-lg overflow-visible z-50">
+              {item.items.map((sub) => renderDesktopSubItem(sub, item.label))}
+            </div>
+          )}
+        </div>
+      );
+    }
+    return null;
+  };
+
+  const toggleMobileGroup = (key: string) =>
+    setMobileOpenGroups((s) => ({ ...s, [key]: !s[key] }));
+
+  const renderMobileSubItem = (sub: SubItem, parentKey: string) => {
+    if (sub.children && sub.children.length > 0) {
+      const key = `${parentKey}-${sub.label}`;
+      const isOpen = !!mobileOpenGroups[key];
+      return (
+        <div key={sub.label} className="flex flex-col">
+          <button
+            onClick={() => toggleMobileGroup(key)}
+            className="flex items-center justify-between text-muted-foreground hover:text-accent transition-colors text-left text-base font-semibold"
+          >
+            {sub.label}
+            <ChevronDown
+              size={16}
+              className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+            />
+          </button>
+          {isOpen && (
+            <div className="flex flex-col gap-3 pl-4 mt-2">
+              {sub.children.map((child) => (
                 <Link
-                  key={sub.label}
-                  to={sub.href}
-                  onClick={() => {
-                    setOpenDropdown(null);
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="block px-4 py-3 text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                  key={child.label}
+                  to={child.href || "#"}
+                  onClick={closeAll}
+                  className="text-muted-foreground hover:text-accent transition-colors text-left text-sm font-semibold"
                 >
-                  {sub.label}
+                  {child.label}
                 </Link>
               ))}
             </div>
@@ -145,8 +228,16 @@ export const Navbar = () => {
         </div>
       );
     }
-
-    return null;
+    return (
+      <Link
+        key={sub.label}
+        to={sub.href || "#"}
+        onClick={closeAll}
+        className="text-muted-foreground hover:text-accent transition-colors text-left text-base font-semibold"
+      >
+        {sub.label}
+      </Link>
+    );
   };
 
   const renderMobileNavItem = (item: NavItem) => {
@@ -173,7 +264,6 @@ export const Navbar = () => {
         </button>
       );
     }
-
     if (isDropdown(item)) {
       const isOpen = openDropdown === item.label;
       return (
@@ -190,25 +280,12 @@ export const Navbar = () => {
           </button>
           {isOpen && (
             <div className="flex flex-col gap-3 pl-4 mt-2">
-              {item.items.map((sub) => (
-                <Link
-                  key={sub.label}
-                  to={sub.href}
-                  onClick={() => {
-                    setOpenDropdown(null);
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="text-muted-foreground hover:text-accent transition-colors text-left text-base font-semibold"
-                >
-                  {sub.label}
-                </Link>
-              ))}
+              {item.items.map((sub) => renderMobileSubItem(sub, item.label))}
             </div>
           )}
         </div>
       );
     }
-
     return null;
   };
 

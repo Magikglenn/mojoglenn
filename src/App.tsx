@@ -31,6 +31,8 @@ const App = () => (
           <Route path="/unsubscribe" element={<Unsubscribe />} />
           <Route path="/conferences" element={<Conferences />} />
           <Route path="/neuromarketing-rennes" element={<NeuromarketingRennes />} />
+          <Route path="/offres/ateliers" element={<AteliersIndex />} />
+          <Route path="/offres/ateliers/pitch-decisif" element={<AtelierPitchDecisif />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -21,6 +21,7 @@ const navItems: NavItem[] = [
       {
         label: "Ateliers",
         children: [
+          { label: "Tous les ateliers", href: "/offres/ateliers" },
           { label: "Ateliers du Futur", href: "/ateliers-du-futur" },
           { label: "Pitch Décisif", href: "/offres/ateliers/pitch-decisif" },
         ],

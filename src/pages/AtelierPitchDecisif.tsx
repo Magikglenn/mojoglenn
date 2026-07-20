@@ -17,6 +17,7 @@ import { supabase } from "@/integrations/supabase/client";
 import atelierPhoto from "@/assets/atelier-pitch-decisif-rennes.jpg.asset.json";
 import glennPitch from "@/assets/glenn-pitch-neuromarketing.jpg.asset.json";
 import jeanProfil from "@/assets/jean-fresneau-profil.jpg.asset.json";
+import glennJeanPitch2 from "@/assets/glenn-jean-pitch-2.jpg.asset.json";
 
 const piliers = [
   { n: 1, title: "Simplicité", text: "Une seule idée forte. Compréhension immédiate. Si on doit réfléchir pour comprendre, c'est déjà perdu." },
@@ -172,11 +173,18 @@ const AtelierPitchDecisif = () => {
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
-              <img
-                src={atelierPhoto.url}
-                alt="Atelier pitch décisif à Rennes — duo neuromarketing et éloquence"
-                className="rounded-2xl w-full aspect-video object-cover shadow-xl"
-              />
+              <div className="grid gap-4">
+                <img
+                  src={atelierPhoto.url}
+                  alt="Atelier pitch décisif à Rennes — duo neuromarketing et éloquence"
+                  className="rounded-2xl w-full aspect-video object-cover shadow-xl"
+                />
+                <img
+                  src={glennJeanPitch2.url}
+                  alt="Glenn Le Bourhis et Jean Fresneau pendant l'atelier pitch"
+                  className="rounded-2xl w-full aspect-video object-cover shadow-xl"
+                />
+              </div>
             </div>
           </div>
         </section>

@@ -195,7 +195,7 @@ const AtelierPitchDecisif = () => {
             <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
               <div className="mx-auto w-full max-w-[320px] aspect-[9/16] rounded-2xl overflow-hidden bg-muted shadow-xl">
                 <iframe
-                  src="https://www.youtube.com/embed/8ke_PvJ37T4?loop=1&playlist=8ke_PvJ37T4"
+                  src="https://www.youtube.com/embed/ARuDhkav6H4?loop=1&playlist=ARuDhkav6H4"
                   title="Atelier Pitch Décisif"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen

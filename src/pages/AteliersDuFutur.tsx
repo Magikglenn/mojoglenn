@@ -33,6 +33,8 @@ import cartePolitique from "@/assets/ateliers-carte-politique.png.asset.json";
 import carteSociete from "@/assets/ateliers-carte-societe.png.asset.json";
 import carteScoreSocial from "@/assets/ateliers-carte-score-social.png.asset.json";
 import collageCartes from "@/assets/ateliers-collage-cartes.png.asset.json";
+import jeuCartes1 from "@/assets/ateliers-jeu-cartes-1.jpg.asset.json";
+import jeuCartes2 from "@/assets/ateliers-jeu-cartes-2.jpg.asset.json";
 
 const categories = [
   {

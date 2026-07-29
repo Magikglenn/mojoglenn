@@ -33,6 +33,8 @@ import cartePolitique from "@/assets/ateliers-carte-politique.png.asset.json";
 import carteSociete from "@/assets/ateliers-carte-societe.png.asset.json";
 import carteScoreSocial from "@/assets/ateliers-carte-score-social.png.asset.json";
 import collageCartes from "@/assets/ateliers-collage-cartes.png.asset.json";
+import jeuCartes1 from "@/assets/ateliers-jeu-cartes-1.jpg.asset.json";
+import jeuCartes2 from "@/assets/ateliers-jeu-cartes-2.jpg.asset.json";
 
 const categories = [
   {
@@ -131,10 +133,22 @@ const cardGallery = [
     caption: "Vue d'ensemble du jeu de cartes illustrées",
   },
   {
+    src: jeuCartes1.url,
+    alt: "Participants à un atelier des Ateliers du Futur manipulant les cartes illustrées autour d'une table.",
+    className: "",
+    caption: "Les cartes en main, en pleine discussion",
+  },
+  {
     src: cartePolitique.url,
     alt: "Carte illustrée de prospective catégorie Politique intitulée Payer pour publier.",
     className: "",
     caption: "Exemple de carte — catégorie Politique",
+  },
+  {
+    src: jeuCartes2.url,
+    alt: "Groupe de participants aux Ateliers du Futur en atelier extérieur, cartes disposées sur la table.",
+    className: "md:col-span-2",
+    caption: "Un atelier en action, sous les parasols",
   },
   {
     src: carteSociete.url,
@@ -145,8 +159,8 @@ const cardGallery = [
   {
     src: carteScoreSocial.url,
     alt: "Carte illustrée de prospective catégorie Société autour du score social professionnel.",
-    className: "md:col-span-2",
-    caption: "Exemple de mise en situation — atelier en action",
+    className: "",
+    caption: "Exemple de carte — Score social",
   },
 ] as const;
 

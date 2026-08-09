@@ -86,6 +86,12 @@ export const Footer = () => {
               <Link to="/ateliers-du-futur" className="block text-muted-foreground hover:text-accent transition-colors">
                 Les Ateliers du Futur
               </Link>
+                            <Link to="/offres/ateliers" className="block text-muted-foreground hover:text-accent transition-colors">
+                Ateliers &amp; formations
+              </Link>
+              <Link to="/offres/ateliers/pitch-decisif" className="block text-muted-foreground hover:text-accent transition-colors">
+                Pitch Décisif
+              </Link>
             </div>
           </div>
 

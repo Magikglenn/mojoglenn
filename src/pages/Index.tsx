@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
@@ -33,6 +34,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+            <Helmet>
+        <title>Glenn Le Bourhis — Expert Neuromarketing, Branding & Storytelling en Bretagne</title>
+        <meta
+          name="description"
+          content="Glenn Le Bourhis (Mojo) : consultant en neuromarketing, branding et storytelling à Rennes. Une communication plus efficace grâce aux sciences comportementales."
+        />
+        <link rel="canonical" href="https://glenn.bzh/" />
+      </Helmet>
       <Navbar />
       
       {/* Section 1 - Hero */}

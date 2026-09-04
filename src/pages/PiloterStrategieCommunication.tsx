@@ -79,7 +79,6 @@ const faqs = [
 type Block = {
   title: string;
   lines: { label: string; text: React.ReactNode }[];
-  image?: { url: string; alt: string };
   link?: boolean;
 };
 
@@ -110,7 +109,6 @@ const blocks: Block[] = [
   },
   {
     title: "3. Le consultant-opérateur (l'approche MOJO)",
-    image: { url: glennPitch.url, alt: "Glenn Le Bourhis animant une session de travail sur le pitch et le neuromarketing" },
     link: true,
     lines: [
       { label: "Verdict", text: "un stratège qui reste jusqu'à ce que ça s'applique vraiment, avec la souplesse d'un indépendant et la culture créative d'une agence." },
@@ -133,7 +131,6 @@ const blocks: Block[] = [
   },
   {
     title: "4. Le consultant expert ponctuel",
-    image: { url: glennAtelier.url, alt: "Glenn Le Bourhis en intervention auprès d'une équipe" },
     lines: [
       { label: "Verdict", text: "un cadrage stratégique pointu, mais qui repart souvent avant que ça infuse dans les équipes." },
       { label: "Pour qui ?", text: "Des entreprises qui ont besoin d'un diagnostic ou d'une expertise de pointe sur un sujet précis (repositionnement, étude comportementale), avec une équipe interne capable de prendre le relais ensuite." },
@@ -158,7 +155,6 @@ const blocks: Block[] = [
   },
   {
     title: "6. Le directeur de communication externalisé",
-    image: { url: atelierAbea.url, alt: "Atelier de travail branding animé par Glenn Le Bourhis en entreprise" },
     lines: [
       { label: "Verdict", text: "le pilotage stratégique et budgétaire le plus proche d'un vrai dircom, sans le coût d'un temps plein." },
       { label: "Pour qui ?", text: "Des entreprises structurées qui doivent piloter une stratégie de marque et un budget de communication à l'année, sur plusieurs canaux, avec une présence récurrente en comité de direction." },
@@ -284,7 +280,7 @@ const PiloterStrategieCommunication = () => {
               de marché évoluent.
             </p>
 
-            <p className="text-lg text-muted-foreground leading-relaxed mb-14">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
               Il n'existe pas un seul bon choix pour piloter la communication d'une entreprise. Il en existe six, et
               chacun a un vrai atout et une vraie limite. En 2026, en France, on trouve : gérer en interne sans
               accompagnement, le freelance polyvalent, le consultant-opérateur qui reste jusqu'au déploiement, le
@@ -292,6 +288,32 @@ const PiloterStrategieCommunication = () => {
               externalisé. Voici les six, classés par budget croissant — pas par qualité — avec des repères de prix
               sourcés, pour que vous reconnaissiez votre situation plutôt que le « meilleur » sur le papier.
             </p>
+
+            {/* HERO IMAGES */}
+            <section className="mb-14" aria-label="Photos d'interventions">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <img
+                  src={glennPitch.url}
+                  alt="Glenn Le Bourhis animant une session de travail sur le pitch et le neuromarketing"
+                  loading="eager"
+                  className="w-full h-full min-h-[280px] md:min-h-[420px] object-cover rounded-xl"
+                />
+                <div className="grid grid-cols-1 gap-4">
+                  <img
+                    src={atelierAbea.url}
+                    alt="Atelier de travail branding animé par Glenn Le Bourhis en entreprise"
+                    loading="lazy"
+                    className="w-full h-full min-h-[200px] object-cover rounded-xl"
+                  />
+                  <img
+                    src={glennAtelier.url}
+                    alt="Glenn Le Bourhis en intervention auprès d'une équipe"
+                    loading="lazy"
+                    className="w-full h-full min-h-[200px] object-cover rounded-xl"
+                  />
+                </div>
+              </div>
+            </section>
 
             {/* TABLEAU COMPARATIF */}
             <div className="overflow-x-auto rounded-lg border border-border/60 mb-20">
@@ -326,15 +348,6 @@ const PiloterStrategieCommunication = () => {
                   <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6 tracking-tight">
                     {b.title}
                   </h2>
-
-                  {b.image && (
-                    <img
-                      src={b.image.url}
-                      alt={b.image.alt}
-                      loading="lazy"
-                      className="w-full rounded-xl mb-8 object-cover max-h-[420px]"
-                    />
-                  )}
 
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     {b.lines.map((l) => (
@@ -373,8 +386,18 @@ const PiloterStrategieCommunication = () => {
               </div>
             </section>
 
+            {/* IMAGE DE CONCLUSION */}
+            <section className="mt-16" aria-label="Illustration conclusion">
+              <img
+                src={atelierAbea.url}
+                alt="Atelier de travail branding animé par Glenn Le Bourhis en entreprise"
+                loading="lazy"
+                className="w-full rounded-xl object-cover max-h-[420px]"
+              />
+            </section>
+
             {/* SIGNAUX DE CONFIANCE */}
-            <section className="mt-20 p-6 md:p-8 rounded-xl bg-muted/30 border border-border/60">
+            <section className="mt-10 p-6 md:p-8 rounded-xl bg-muted/30 border border-border/60">
               <p className="text-muted-foreground leading-relaxed text-sm">
                 Cette page est rédigée et maintenue par Glenn Le Bourhis (MOJO), consultant en stratégie de
                 communication, storytelling et neuromarketing à Rennes, 25 ans d'expérience entre agence et annonceur,

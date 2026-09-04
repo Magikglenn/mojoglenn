@@ -11,7 +11,14 @@ type NavItem =
   | { label: string; type: "dropdown"; items: SubItem[] };
 
 const navItems: NavItem[] = [
-  { label: "Services", href: "#services", type: "anchor" },
+  {
+    label: "Services",
+    type: "dropdown",
+    items: [
+      { label: "Mes services", href: "/#services" },
+      { label: "Piloter sa stratégie de communication", href: "/piloter-strategie-communication-entreprise" },
+    ],
+  },
   { label: "À propos", href: "/a-propos", type: "route" },
   { label: "Témoignages", href: "#testimonials", type: "anchor" },
   {

@@ -54,6 +54,12 @@ const PAGES = [
     description:
       "Transformez votre pitch en machine de guerre. Atelier duo neuromarketing + éloquence à Rennes. Diagnostic gratuit de votre pitch avec note sur 100.",
   },
+  {
+    path: "/piloter-strategie-communication-entreprise",
+    title: "Les 6 modèles pour piloter sa communication en 2026 | MOJO",
+    description:
+      "Interne, freelance, agence, dircom externalisé, consultant : comparatif honnête des 6 modèles pour piloter sa stratégie de communication, avec budgets sourcés (Malt, La Fabrique du Net).",
+  },
 ];
 
 function esc(s) {

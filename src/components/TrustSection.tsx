@@ -24,7 +24,7 @@ const clientLogos = [
   { name: "ABEA", logo: abeaLogo, large: false },
   { name: "ISCOM", logo: iscomLogo, large: false },
   { name: "ESIR", logo: esirLogo, large: false },
-  { name: "Bodemer", logo: bodemerLogo, large: true },
+  { name: "YDEO", logo: ydeoLogo, large: false },
   { name: "Askoria", logo: askoriaLogo, large: false },
   { name: "Emmaüs", logo: emmausLogo, large: true },
   { name: "Saint-Malo Agglomération", logo: saintMaloLogo, large: false },

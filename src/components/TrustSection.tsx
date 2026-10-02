@@ -7,7 +7,7 @@ import orangeLogo from "@/assets/logos/orange.png";
 import totalEnergiesLogo from "@/assets/logos/total-energies.png";
 import iscomLogo from "@/assets/logos/iscom.webp";
 import esirLogo from "@/assets/logos/esir.webp";
-import bodemerLogo from "@/assets/logos/bodemer.jpg";
+import ydeoLogo from "@/assets/logos/ydeo.png.asset.json";
 import askoriaLogo from "@/assets/logos/askoria.png";
 import emmausLogo from "@/assets/logos/emmaus.png";
 import saintMaloLogo from "@/assets/logos/saint-malo-agglo.png";
@@ -24,7 +24,7 @@ const clientLogos = [
   { name: "ABEA", logo: abeaLogo, large: false },
   { name: "ISCOM", logo: iscomLogo, large: false },
   { name: "ESIR", logo: esirLogo, large: false },
-  { name: "Bodemer", logo: bodemerLogo, large: true },
+  { name: "YDEO", logo: ydeoLogo.url, large: false },
   { name: "Askoria", logo: askoriaLogo, large: false },
   { name: "Emmaüs", logo: emmausLogo, large: true },
   { name: "Saint-Malo Agglomération", logo: saintMaloLogo, large: false },

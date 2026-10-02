@@ -7,7 +7,7 @@ import orangeLogo from "@/assets/logos/orange.png";
 import totalEnergiesLogo from "@/assets/logos/total-energies.png";
 import iscomLogo from "@/assets/logos/iscom.webp";
 import esirLogo from "@/assets/logos/esir.webp";
-import bodemerLogo from "@/assets/logos/bodemer.jpg";
+import ydeoLogo from "@/assets/logos/ydeo.png.asset.json";
 import askoriaLogo from "@/assets/logos/askoria.png";
 import emmausLogo from "@/assets/logos/emmaus.png";
 import saintMaloLogo from "@/assets/logos/saint-malo-agglo.png";
